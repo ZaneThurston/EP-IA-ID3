@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class ID3 {
 	 * @param learningSet  - Atributos a serem utilizados pelo classificador
 	 * @return     - Arvore de decisao
 	 */
-	public Node generateTree(List<Registro> records, Node root, ListDiscreteAttributes learningSet) {
+	public Node generateTree(List<Registro> records, Node root, ListDisAtributos learningSet) {
 
 		//Inicializa as variaveis para selecionar o melhor atributp
 		int bestAttribute = -1;
@@ -34,18 +35,18 @@ public class ID3 {
 			LinkedList<Integer> setSizes = new LinkedList<Integer>();
 
 			//Faz um de para com a posicao do atributo no vetor de atributos com a posicao real dele na base de dados
-			int attributePositionRecord = Utils.getAttributePositionOnRecords(learningSet.getAttributeInfo(i), root.getData().get(0));
+			int attributePositionRecord = Calculero.getAttributePositionOnRecords(learningSet.getAttributeInfo(i), root.getDados().get(0));
 
 			//Itera por cada possivel valor do atributo selecionado
 			for(int j = 0; j < learningSet.getAttributeInfo(i).getListAttributes().getQuantity(); j++) {
 				//Pega os registros com o valor a ser considerado
-				ArrayList<Record> subset = Utils.subset(root, attributePositionRecord, j);
+				ArrayList<Registro> subset = Calculero.subset(root, attributePositionRecord, j);
 				//Pega o tamanho desse subset
 				setSizes.add(subset.size());
 
 				//Calcula a entropia para o subset
 				if(subset.size() != 0) {
-					entropy = Entropy.calculateEntropy(subset, learningSet);
+					entropy = Entropia.calcula(subset, learningSet);
 					entropies.add(entropy);
 				} else {
 					entropies.add(0.0);
@@ -53,7 +54,7 @@ public class ID3 {
 			}
 
 			//Calcula o ganho de informacao
-			double gain = InformationGain.calculateGain(root.getEntropy(), entropies, setSizes, root.getData().size());
+			double gain = Ganho.calculateGain(root.getEntropia(), entropies, setSizes, root.getDados().size());
 
 			//Se for melhor do que o melhor atributo atualiza os valores
 			if(gain > bestGain) {
@@ -65,23 +66,23 @@ public class ID3 {
 		//Caso exista um atributo a ser considerado
 		if(bestAttribute != -1) {
 			//Preenche o no da arvore com os valores desse atributo
-			AttributeInfo chosen = learningSet.getAttributeInfo(bestAttribute);
+			InfoAtributo chosen = learningSet.getAttributeInfo(bestAttribute);
 			String testedAttributeName = root.getTestAttribute().getValue();
 
 			root.setTestAttribute(chosen);
 			root.setValue(testedAttributeName);
-			root.children = new Node[chosen.getListAttributes().getQuantity()];
+			root.childs = new Node[chosen.getListAttributes().getQuantity()];
 			root.setUsed(true);
 
 			learningSet.removeAttribute(bestAttribute);
 
-			int bestAttributePositionRecord = Utils.getAttributePositionOnRecords(chosen, records.get(0));
+			int bestAttributePositionRecord = Calculero.getAttributePositionOnRecords(chosen, records.get(0));
 
 			//Preenche as folhas geradas a partir desse atributo
 			for (int j = 0; j < chosen.getListAttributes().getQuantity(); j++) {
 				root.childs[j] = new Node();
 				root.childs[j].setPai(root);
-				root.childs[j].setData(Utils.subset(root, bestAttributePositionRecord, j));
+				root.childs[j].setDados(Calculero.subset(root, bestAttributePositionRecord, j));
 				root.childs[j].getTestAttribute().setValue(chosen.getListAttributes().getValue(j));
 			}
 
@@ -92,7 +93,7 @@ public class ID3 {
 		}
 		//Metodo de para do algoritmo
 		else {
-			return populateResult(root.getData(), root, learningSet);
+			return populateResult(root.getDados(), root, learningSet);
 		}
 
 		return root;
@@ -107,17 +108,17 @@ public class ID3 {
 	 * @return
 	 */
 	private Node populateResult(List<Registro> records, Node root, ListDiscreteAttributes learningSet) {
-		AttributeInfo chosen = learningSet.getAttributeInfo(learningSet.getAttributeQuantity() - 1);
+		InfoAtributo chosen = learningSet.getAttributeInfo(learningSet.getAttributeQuantity() - 1);
 
-		root.children = new Node[1];
+		root.childs = new Node[1];
 
-		root.children[0] = new Node();
-		root.children[0].setParent(root);
+		root.childs[0] = new Node();
+		root.childs[0].setPai(root);
 
-		int classAttributePositionRecord = Utils.getAttributePositionOnRecords(chosen, records.get(0));
-		int resultPosition = Utils.getMajority(root.getData(), learningSet.getAttributeInfo(learningSet.getAttributeQuantity() - 1).getListAttributes(), classAttributePositionRecord);
+		int classAttributePositionRecord = Calculero.getAttributePositionOnRecords(chosen, records.get(0));
+		int resultPosition = Calculero.getMajority(root.getDados(), learningSet.getAttributeInfo(learningSet.getAttributeQuantity() - 1).getListAttributes(), classAttributePositionRecord);
 
-		root.children[0].getTestAttribute().setValue(chosen.getListAttributes().getValue(resultPosition));
+		root.childs[0].getTestAttribute().setValue(chosen.getListAttributes().getValue(resultPosition));
 
 		return root;
 	}

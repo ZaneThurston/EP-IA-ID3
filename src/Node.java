@@ -9,7 +9,7 @@ public class Node {
 
 	public void setPai(Node pai) { this.parent = pai; }
 
-	public void setEntropia(double entropia, ){}
+	public void setEntropia(double entropia, ListDisAtributos setTreino){}
 
 	public float getEntropia(){ return entropia; }
 
