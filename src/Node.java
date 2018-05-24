@@ -3,9 +3,13 @@ import java.util.List;
 public class Node {
 
 	private List<Registro> registros,
+			Node childs[];
+			Node parent;
 			float entropia;
 
-	public void setEntropia(){}
+	public void setPai(Node pai) { this.parent = pai; }
+
+	public void setEntropia(double entropia, ){}
 
 	public float getEntropia(){ return entropia; }
 

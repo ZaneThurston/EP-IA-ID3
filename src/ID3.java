@@ -79,15 +79,15 @@ public class ID3 {
 
 			//Preenche as folhas geradas a partir desse atributo
 			for (int j = 0; j < chosen.getListAttributes().getQuantity(); j++) {
-				root.children[j] = new Node();
-				root.children[j].setParent(root);
-				root.children[j].setData(Utils.subset(root, bestAttributePositionRecord, j));
-				root.children[j].getTestAttribute().setValue(chosen.getListAttributes().getValue(j));
+				root.childs[j] = new Node();
+				root.childs[j].setPai(root);
+				root.childs[j].setData(Utils.subset(root, bestAttributePositionRecord, j));
+				root.childs[j].getTestAttribute().setValue(chosen.getListAttributes().getValue(j));
 			}
 
 			//Itera recursivamente pelos filhos
 			for (int j = 0; j < chosen.getListAttributes().getQuantity(); j++) {
-				generateTree(records, root.children[j], learningSet.clone());
+				generateTree(records, root.childs[j], learningSet.clone());
 			}
 		}
 		//Metodo de para do algoritmo
@@ -106,7 +106,7 @@ public class ID3 {
 	 * @param learningSet  - Atributos ainda nao utilizados no ramo
 	 * @return
 	 */
-	private Node populateResult(List<Record> records, Node root, ListDiscreteAttributes learningSet) {
+	private Node populateResult(List<Registro> records, Node root, ListDiscreteAttributes learningSet) {
 		AttributeInfo chosen = learningSet.getAttributeInfo(learningSet.getAttributeQuantity() - 1);
 
 		root.children = new Node[1];
