@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+
 public class Registro {
 
-	private String dado;
+	private ArrayList<Atributo> atributos;
 
+	public ArrayList<Atributo> getAtributos() { return atributos;}
 
-
-
-
+	public void setAtributos(ArrayList<Atributo> atributos) {
+		this.atributos = atributos;
+	}
 }
