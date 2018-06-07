@@ -3,6 +3,8 @@ public class Atributo {
 	private	double valor;
 	private	boolean desconhecido;
 
+	public Atributo() { }
+
 	public Atributo(String nome, double valor) {
 		this.nome = nome;
 		this.valor = valor;
@@ -14,7 +16,7 @@ public class Atributo {
 		try {
 			this.valor = Double.valueOf(valor);
 			this.desconhecido = false;
-		} catch (NumberFormatException){
+		} catch (NumberFormatException e){
 			this.valor = -1;
 			this.desconhecido = true;
 		}

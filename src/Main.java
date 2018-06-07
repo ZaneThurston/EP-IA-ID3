@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.List;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -12,13 +12,13 @@ public class Main {
 		public static void main(String[] args) {
 
 			//Caminho para a pasta onde será lido o arquivo com a base de dados
-			String path = "C:\\Users\\davidson.sestaro\\Dropbox\\IA\\";
+			String path = "C:\\Users\\Marcos\\Documents\\IA\\";
 
 			//Carrega os atributos da base de dados
-			ListDiscreteAttributes attributes = FileReader.readAttributes(path + "PlayGolf.txt");
+			ListDisAtributos atributos = IOManager.readAtributos(path + "PlayGolf.txt");
 
 			//Carrega os registros da base de dados
-			List<Registro> records = FileReader.readDataset(path + "PlayGolf.txt", attributes);
+			ArrayList<Registro> records = IOManager.readDataset(path + "PlayGolf.txt", atributos);
 
 			//Instância o primeiro ramo da nossa árvore
 			Node root = new Node();
@@ -26,7 +26,7 @@ public class Main {
 
 			//Inicia o processamento da árvore
 			ID3 id3 = new ID3();
-			id3.generateTree(records, root, attributes);
+			id3.generateTree(records, root, atributos);
 
 			//Imprime a arvore resultante no arquivo Result.txt
 			PrintWriter writer = null;
@@ -37,7 +37,7 @@ public class Main {
 				e.printStackTrace();
 			}
 
-			FileWriter.writeTree(root, writer, 0);
+			IOManager.writeArvore(root, writer, 0);
 
 			//Fecha o arquivo
 			writer.close();

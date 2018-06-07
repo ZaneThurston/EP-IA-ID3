@@ -16,8 +16,8 @@ public class ID3 {
 	public Node generateTree(List<Registro> records, Node root, ListDisAtributos learningSet) {
 
 		//Inicializa as variaveis para selecionar o melhor atributp
-		int bestAttribute = -1;
-		double bestGain = 0.0;
+		int melhorAtributo = -1;
+		double melhorGanho = 0.0;
 
 		//Calcula a entropia para os registros a serem considerados
 		root.setEntropia(Entropia.calcula(root.getDados(), learningSet));
@@ -107,8 +107,8 @@ public class ID3 {
 	 * @param learningSet  - Atributos ainda nao utilizados no ramo
 	 * @return
 	 */
-	private Node populateResult(List<Registro> records, Node root, ListDiscreteAttributes learningSet) {
-		InfoAtributo chosen = learningSet.getAttributeInfo(learningSet.getAttributeQuantity() - 1);
+	private Node populateResult(ArrayList<Registro> records, Node root, ListDisAtributos learningSet) {
+		InfoAtributo chosen = learningSet.getInfoAtributo(learningSet.getQtdeAtributos() - 1);
 
 		root.childs = new Node[1];
 

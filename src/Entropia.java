@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Entropia {
@@ -10,7 +11,7 @@ public class Entropia {
 	 * @param learningSet - atributos
 	 * @return
 	 */
-	public static double calcula(List<Registro> data, ListDiscreteAttributes learningSet) {
+	public static double calcula(ArrayList<Registro> data, ListDisAtributos learningSet) {
 		double entropy = 0;
 
 		if(data.size() == 0) {
@@ -18,17 +19,17 @@ public class Entropia {
 		}
 
 		//Obtem a posicao em que se encontra a classe no conjunto de atributos
-		int positionClass = learningSet.getAttributeQuantity() - 1;
+		int positionClass = learningSet.getQtdeAtributos() - 1;
 		//Obtem a posicao em que se encontra a classe nos registros
-		int positionClassRecord = data.get(0).getAttributes().size() - 1;
+		int positionClassRecord = data.get(0).getAtributos().size() - 1;
 
 		//Itera pelas classes existentes
-		for(int i = 0; i < learningSet.getAttributeInfo(positionClass).getListAttributes().getQuantity(); i++) {
+		for(int i = 0; i < learningSet.getInfoAtributo(positionClass).getListAttributes().getQuantity(); i++) {
 			int count = 0;
 			for(int j = 0; j < data.size(); j++) {
 				Registro record = data.get(j);
 
-				if(record.getAttributes().get(positionClassRecord).getValue() == i) {
+				if(record.getAtributos().get(positionClassRecord).getValor() == i) {
 					count++;
 				}
 			}

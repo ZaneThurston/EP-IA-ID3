@@ -17,26 +17,28 @@ public class Node {
 
 	private Map<String, Node> childs;
 			Node parent;
-			float entropia;
+			double entropia;
+
+	public Node(){}
 
 	public void setPai(Node pai) { this.parent = pai; }
 
-	public void setEntropia(double entropia, ListDisAtributos setTreino){}
+	public void setEntropia(double entropia) { this.entropia = entropia; }
 
-	public float getEntropia(){ return entropia; }
+	public double getEntropia(){ return entropia; }
 
 	public Atributo getAtributoTeste() { return atributo; }
 
 	public String getValor() { if (folha) return valor; else return null;}
 
-	public Node getChild() { return childs.; }
+	public Node getChild() { return childs.get(valor); }
 
 	public Node getChild(String valor) { if(!folha) return childs.get(valor); else return null; }
 
 
 
-	public List<Registro> getDados(){ return registros; }
+	public ArrayList<Registro> getDados(){ return registros; }
 
-	public int setDados(ArrayList<Registro> registros){ this.registros = registros; }
+	public void setDados(ArrayList<Registro> registros){ this.registros = registros; }
 
 }

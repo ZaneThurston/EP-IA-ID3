@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class AtributoDiscreto {
+public class AtributoDiscreto extends Atributo {
 	private Map<String, Integer> valores;
 
 	private AtributoDiscreto() { valores = new HashMap<String, Integer>(); }
