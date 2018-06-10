@@ -12,15 +12,18 @@ public class Main {
 		public static void main(String[] args) {
 
 			//Caminho para a pasta onde será lido o arquivo com a base de dados
-			String path = "C:\\Users\\Marcos\\Documents\\IA\\";
+			if (args.length < 1) {
+				System.out.println(" Informe caminho do arquivo de dados! ");
+				return;
+			}
 
-			//Carrega os atributos da base de dados
-			ListDisAtributos atributos = IOManager.readAtributos(path + "PlayGolf.txt");
+			//Carrega os atributos e registros da base de dados
+			ListAtributos atributos = new ListAtributos();
+			ArrayList<Registro> registros = new ArrayList<Registro>();
+			IOManager.readDataset(args[0], atributos, registros);
 
-			//Carrega os registros da base de dados
-			ArrayList<Registro> records = IOManager.readDataset(path + "PlayGolf.txt", atributos);
 
-			//Instância o primeiro ramo da nossa árvore
+			//Instancia a raiz da arvore:
 			Node root = new Node();
 			root.setDados(records);
 

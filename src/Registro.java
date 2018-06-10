@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Registro {
 
+	// Conjunto de atributos
 	private ArrayList<Atributo> atributos;
 
 	public ArrayList<Atributo> getAtributos() { return atributos;}

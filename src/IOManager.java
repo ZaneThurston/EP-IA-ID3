@@ -1,30 +1,39 @@
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 public class IOManager {
 
+	private static String SEPARADOR = "; ";
+
+	public void setSeparador(String newSep){ this.SEPARADOR = newSep; }
+
+	// todo: WIP CONSTRUCAO DA SAIDA
 	public static void writeArvore(Node raiz, PrintWriter writer, int nivelArvore) {
 		String linha;
 
 		if (raiz.getAtributoTeste().getNome().isEmpty()) {
-			linha = raiz.getAtributoTeste().getValor();
+			//linha = raiz.getAtributoTeste().getValor();
+
 
 		}
 
 	}
 
 
-	public static ListDisAtributos readAtributos(String path) {
-		ListDisAtributos attribs = null;
+	public static void readDataset(String path, ListAtributos atributos, ArrayList<Registro> registros) {
+		String linha = null;
+		try {
+			BufferedReader rd = new BufferedReader(new FileReader(path));
 
-		return attribs;
-	}
+			linha = rd.readLine();
+			atributos.setAtributos(linha.split(SEPARADOR));
+			while((linha = rd.readLine()) != null) {
 
-	public static ArrayList<Registro> readDataset(String path, ListDisAtributos atributos) {
-		ArrayList<Registro> dataRegs = null;
+			}
 
-
-		return dataRegs;
+		} catch (IOException e1) {
+			System.out.println("Erro ao ler arquivo de entrada");
+		}
 	}
 
 }

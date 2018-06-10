@@ -13,9 +13,9 @@ public class ID3 {
 	 * @param learningSet  - Atributos a serem utilizados pelo classificador
 	 * @return     - Arvore de decisao
 	 */
-	public Node generateTree(List<Registro> records, Node root, ListDisAtributos learningSet) {
+	public Node generateTree(List<Registro> records, Node root, ListAtributos learningSet) {
 
-		//Inicializa as variaveis para selecionar o melhor atributp
+		//Inicializa as variaveis para selecionar o melhor atributo
 		int melhorAtributo = -1;
 		double melhorGanho = 0.0;
 
@@ -28,7 +28,7 @@ public class ID3 {
 		}
 
 		//Avalia cada atributo ainda nao utilizado nesse galho da arvore
-		for(int i = 0; i < learningSet.getAttributeQuantity() - 1; i++) {
+		for(int i = 0; i < learningSet.getQtdeAtributos() - 1; i++) {
 			double entropy = 0;
 
 			LinkedList<Double> entropies = new LinkedList<Double>();
@@ -57,14 +57,14 @@ public class ID3 {
 			double gain = Ganho.calculateGain(root.getEntropia(), entropies, setSizes, root.getDados().size());
 
 			//Se for melhor do que o melhor atributo atualiza os valores
-			if(gain > bestGain) {
-				bestAttribute = i;
-				bestGain = gain;
+			if(gain > melhorGanho) {
+				melhorAtributo = i;
+				melhorGanho = gain;
 			}
 		}
 
 		//Caso exista um atributo a ser considerado
-		if(bestAttribute != -1) {
+		if(melhorAtributo != -1) {
 			//Preenche o no da arvore com os valores desse atributo
 			InfoAtributo chosen = learningSet.getAttributeInfo(bestAttribute);
 			String testedAttributeName = root.getTestAttribute().getValue();
