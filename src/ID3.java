@@ -13,16 +13,17 @@ public class ID3 {
 	 * @param atributos  - Atributos a serem utilizados pelo classificador
 	 * @return     - Arvore de decisao
 	 */
-	public Node generateTree(Node root, ListAtributos atributos) {
+	public Node generateTree(Node root, ArrayList<Atributo> atributos) {
 
 		//Inicializa as variaveis para selecionar o melhor atributo
 		int melhorAtributo = -1;
 		double melhorGanho = 0.0;
 
 		//Calcula a entropia para os registros a serem considerados
-        for (int i=0; i< atributos.)
-		melhorGanho = Ganho.calcula(root.getDados(), atributos);
-
+        for (int i=0; i< atributos.size(); i++) {
+            String atributoAtual = atributos.get(i).getNome();
+            melhorGanho = Ganho.calcula(root.getDados(), atributoAtual);
+        }
 		//Condicao de para da arvore
 		if(root.getEntropia() == 0) {
 			return populateResult(root.getDados(), root, learningSet);

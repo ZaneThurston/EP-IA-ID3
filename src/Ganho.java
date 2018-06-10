@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Ganho {
@@ -11,8 +12,8 @@ public class Ganho {
 	 * @param data         - Quantidade de registros total
 	 * @return
 	 */
-	public static double calcula() {
-		double gain = rootEntropy;
+	public static double calcula(ArrayList<Registro> dados, String atributoAtual) {
+		double gain = Entropia.calcula(dados);
 
 		for (int i = 0; i < subEntropies.size(); i++) {
 			gain += -((setSizes.get(i) / (double) data) * subEntropies.get(i));

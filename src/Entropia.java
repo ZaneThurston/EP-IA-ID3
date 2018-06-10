@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 public class Entropia {
@@ -8,39 +10,38 @@ public class Entropia {
 	 * do conjunto
 	 *
 	 * @param dados   - registros do qual sera calculado a entropia
-	 * @param atributos - atributos
 	 * @return
 	 */
-	public static double calcula(ArrayList<Registro> dados, ListAtributos atributos) {
+
+	private static final double LOG2 = Math.log(2.0);
+
+	public static double calcula(ArrayList<Registro> dados) {
 		double entropy = 0;
+		HashMap<String, Integer> frequencias = new HashMap<>();
+		Iterator<String> iteradorFreq;
 
 		if(dados.size() == 0) {
 			return 0;
 		}
 
-		//Obtem a posicao em que se encontra a classe no conjunto de atributos
-		int positionClass = learningSet.getQtdeAtributos() - 1;
-		//Obtem a posicao em que se encontra a classe nos registros
-		int positionClassRecord = dados.get(0).getAtributos().size() - 1;
 
-		//Itera pelas classes existentes
-		for(int i = 0; i < learningSet.getInfoAtributo(positionClass).getListAttributes().getQuantity(); i++) {
-			int count = 0;
-			for(int j = 0; j < dados.size(); j++) {
-				Registro record = dados.get(j);
-
-				if(record.getAtributos().get(positionClassRecord).getValor() == i) {
-					count++;
-				}
-			}
-
-			//Calcula a entropia
-			double probability = count / (double)dados.size();
-			if(count > 0) {
-				entropy += -probability * (Math.log(probability) / Math.log(2));
-			}
+		for (int i=0; i < dados.size(); i++) {
+			Registro regAtual = dados.get(i);
+			String classeAtual = regAtual.getClasse();
+			if (!frequencias.containsKey(classeAtual)) frequencias.put(classeAtual, 0);
+			frequencias.put(
+					classeAtual,
+					frequencias.get(classeAtual) + 1);
 		}
 
+		iteradorFreq = frequencias.keySet().iterator();
+
+		while (iteradorFreq.hasNext()) {
+			String chaveAtu = iteradorFreq.next();
+			double freqAtu = frequencias.get(chaveAtu).doubleValue() / (new Integer(dados.size())).doubleValue();
+			entropy -= freqAtu * (Math.log(freqAtu) / LOG2);
+
+		}
 		return entropy;
 	}
 }
