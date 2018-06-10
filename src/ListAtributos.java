@@ -8,7 +8,11 @@ public class ListAtributos {
 	public ListAtributos() {}
 
 	public void setAtributos(String[] campos) {
-
+		int i = 0;
+		while (i < campos.length) {
+			atributos.add(new Atributo(campos[i]));
+			i++;
+		}
 	}
 
 	public int getQtdeAtributos() {

@@ -7,11 +7,11 @@ public class Entropia {
 	 * Metodo que dado um conjunto de registros e os atributos a serem calculados, calcula a entropia
 	 * do conjunto
 	 *
-	 * @param data   - registros do qual sera calculado a entropia
-	 * @param learningSet - atributos
+	 * @param dados   - registros do qual sera calculado a entropia
+	 * @param atributos - atributos
 	 * @return
 	 */
-	public static double calcula(ArrayList<Registro> dados, ListAtributos learningSet) {
+	public static double calcula(ArrayList<Registro> dados, ListAtributos atributos) {
 		double entropy = 0;
 
 		if(dados.size() == 0) {

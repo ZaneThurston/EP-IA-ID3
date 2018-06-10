@@ -8,30 +8,26 @@ public class Node {
 
 	// no eh interno (decisao)
 	private Atributo atributo;
-	private double ganho;
 	private ArrayList<Registro> registros;
 
 	// no eh folha (classificacao)
-	private String valor;
+	private String classe;
 
 
 	private Map<String, Node> childs;
 			Node parent;
-			double entropia;
 
 	public Node(){}
 
+	public void setDados(ArrayList<Registro> registros){ this.registros = registros; }
+
 	public void setPai(Node pai) { this.parent = pai; }
-
-	public void setEntropia(double entropia) { this.entropia = entropia; }
-
-	public double getEntropia(){ return entropia; }
 
 	public Atributo getAtributoTeste() { return atributo; }
 
-	public String getValor() { if (folha) return valor; else return null;}
+	public String getClasse() { if (folha) return classe; else return null;}
 
-	public Node getChild() { return childs.get(valor); }
+	public Node getChild() { return childs.get(classe); }
 
 	public Node getChild(String valor) { if(!folha) return childs.get(valor); else return null; }
 
@@ -39,6 +35,6 @@ public class Node {
 
 	public ArrayList<Registro> getDados(){ return registros; }
 
-	public void setDados(ArrayList<Registro> registros){ this.registros = registros; }
+
 
 }

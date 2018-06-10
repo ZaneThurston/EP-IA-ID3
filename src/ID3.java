@@ -8,19 +8,20 @@ public class ID3 {
 	/**
 	 * Gera a arvore de decisao de forma recursiva.
 	 *
-	 * @param records   - Dados a serem classificados pela arvore
-	 * @param root    - No da arvore do topo da arvore para essa iteracao
-	 * @param learningSet  - Atributos a serem utilizados pelo classificador
+	 * @param records    - Dados a serem classificados pela arvore
+	 * @param root       - No da arvore do topo da arvore para essa iteracao
+	 * @param atributos  - Atributos a serem utilizados pelo classificador
 	 * @return     - Arvore de decisao
 	 */
-	public Node generateTree(List<Registro> records, Node root, ListAtributos learningSet) {
+	public Node generateTree(Node root, ListAtributos atributos) {
 
 		//Inicializa as variaveis para selecionar o melhor atributo
 		int melhorAtributo = -1;
 		double melhorGanho = 0.0;
 
 		//Calcula a entropia para os registros a serem considerados
-		root.setEntropia(Entropia.calcula(root.getDados(), learningSet));
+        for (int i=0; i< atributos.)
+		melhorGanho = Ganho.calcula(root.getDados(), atributos);
 
 		//Condicao de para da arvore
 		if(root.getEntropia() == 0) {
@@ -107,7 +108,7 @@ public class ID3 {
 	 * @param learningSet  - Atributos ainda nao utilizados no ramo
 	 * @return
 	 */
-	private Node populateResult(ArrayList<Registro> records, Node root, ListDisAtributos learningSet) {
+	private Node populateResult(ArrayList<Registro> records, Node root, ListAtributos learningSet) {
 		InfoAtributo chosen = learningSet.getInfoAtributo(learningSet.getQtdeAtributos() - 1);
 
 		root.childs = new Node[1];

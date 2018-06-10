@@ -18,29 +18,23 @@ public class Main {
 			}
 
 			//Carrega os atributos e registros da base de dados
-			ListAtributos atributos = new ListAtributos();
-			ArrayList<Registro> registros = new ArrayList<Registro>();
+			ArrayList<Atributo> atributos = new ArrayList<>();
+			ArrayList<Registro> registros = new ArrayList<>();
 			IOManager.readDataset(args[0], atributos, registros);
 
 
 			//Instancia a raiz da arvore:
 			Node root = new Node();
-			root.setDados(records);
+			root.setDados(registros);
 
 			//Inicia o processamento da árvore
 			ID3 id3 = new ID3();
-			id3.generateTree(records, root, atributos);
+			id3.generateTree(root, atributos);
 
 			//Imprime a arvore resultante no arquivo Result.txt
 			PrintWriter writer = null;
 
-			try {
-				writer = new PrintWriter(path + "Result.txt", "UTF-8");
-			} catch (FileNotFoundException | UnsupportedEncodingException e) {
-				e.printStackTrace();
-			}
-
-			IOManager.writeArvore(root, writer, 0);
+			IOManager.writeArvore(args[0], root);
 
 			//Fecha o arquivo
 			writer.close();

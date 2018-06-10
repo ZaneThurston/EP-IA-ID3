@@ -1,13 +1,19 @@
-import java.util.ArrayList;
 
+// Classe que define um registro qualquer
+// contem sua lista de dados
 public class Registro {
 
-	// Conjunto de atributos
-	private ArrayList<Atributo> atributos;
+    private String[] dados;
 
-	public ArrayList<Atributo> getAtributos() { return atributos;}
+    public Registro(String[] dados) {
+        this.dados = new String[dados.length];
+        this.dados = dados;
+    }
 
-	public void setAtributos(ArrayList<Atributo> atributos) {
-		this.atributos = atributos;
+	public String[] getDados() { return dados; }
+
+	public void setValores(String[] dados) {
+		this.dados = new String[dados.length];
+		this.dados = dados;
 	}
 }

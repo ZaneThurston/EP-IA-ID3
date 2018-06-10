@@ -11,7 +11,7 @@ public class Ganho {
 	 * @param data         - Quantidade de registros total
 	 * @return
 	 */
-	public static double calculateGain(double rootEntropy, LinkedList<Double> subEntropies, LinkedList<Integer> setSizes, int data) {
+	public static double calcula() {
 		double gain = rootEntropy;
 
 		for (int i = 0; i < subEntropies.size(); i++) {
