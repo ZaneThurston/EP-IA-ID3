@@ -42,8 +42,7 @@ public class Ganho {
 			Registro regAtu = dados.get(i);
 			String valorAtribAtu = regAtu.getDado(atributoChave, atributos);
 			if (!subconj.containsKey(valorAtribAtu)) {
-				subconj.put(valorAtribAtu, new ArrayList<Registro>());
-
+				subconj.put(valorAtribAtu, new ArrayList<>());
 			}
 			subconj.get(valorAtribAtu).add(regAtu);
 

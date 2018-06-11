@@ -18,9 +18,10 @@ public class Registro {
 	public String getDado(String atributo, ArrayList<Atributo> ListAtributos) {
         for (int i = 0; i<ListAtributos.size(); i++) {
             if (ListAtributos.get(i).getNome() == atributo){
-
+                return dados[i];
             }
         }
+        return null;
     }
 
 	public void setValores(String[] dados) {
