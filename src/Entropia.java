@@ -20,10 +20,7 @@ public class Entropia {
 		HashMap<String, Integer> frequencias = new HashMap<>();
 		Iterator<String> iteradorFreq;
 
-		if(dados.size() == 0) {
-			return 0;
-		}
-
+		if(dados.size() == 0) return 0;
 
 		for (int i=0; i < dados.size(); i++) {
 			Registro regAtual = dados.get(i);
@@ -37,8 +34,8 @@ public class Entropia {
 		iteradorFreq = frequencias.keySet().iterator();
 
 		while (iteradorFreq.hasNext()) {
-			String chaveAtu = iteradorFreq.next();
-			double freqAtu = frequencias.get(chaveAtu).doubleValue() / (new Integer(dados.size())).doubleValue();
+			String classeAtu = iteradorFreq.next();
+			double freqAtu = frequencias.get(classeAtu).doubleValue() / (new Integer(dados.size())).doubleValue();
 			entropy -= freqAtu * (Math.log(freqAtu) / LOG2);
 
 		}

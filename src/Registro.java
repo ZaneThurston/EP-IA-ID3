@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 // Classe que define um registro qualquer
 // contem sua lista de dados
@@ -13,6 +14,14 @@ public class Registro {
     }
 
 	public String[] getDados() { return dados; }
+
+	public String getDado(String atributo, ArrayList<Atributo> ListAtributos) {
+        for (int i = 0; i<ListAtributos.size(); i++) {
+            if (ListAtributos.get(i).getNome() == atributo){
+
+            }
+        }
+    }
 
 	public void setValores(String[] dados) {
 		this.dados = new String[dados.length];
