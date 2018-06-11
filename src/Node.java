@@ -4,14 +4,8 @@ import java.util.Map;
 
 public class Node {
 
-	private boolean folha;
-
 	// no eh interno (decisao)
-	private Atributo atributo;
-	private ArrayList<Registro> registros;
-
-	// no eh folha (classificacao)
-	private String classe;
+	private String atributo;
 
 
 	private Map<String, Node> childs;
@@ -19,11 +13,9 @@ public class Node {
 
 	public Node(){}
 
-	public void setDados(ArrayList<Registro> registros){ this.registros = registros; }
+	public String getAtributoTeste() { return atributo; }
 
-	public void setPai(Node pai) { this.parent = pai; }
-
-	public Atributo getAtributoTeste() { return atributo; }
+	public void setAtributoTeste(String atributo) { this.atributo = atributo; }
 
 	public String getClasse() { if (folha) return classe; else return null;}
 

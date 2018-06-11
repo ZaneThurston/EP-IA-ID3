@@ -24,12 +24,11 @@ public class Main {
 
 
 			//Instancia a raiz da arvore:
-			Node root = new Node();
-			root.setDados(registros);
+			Node root = null;
 
 			//Inicia o processamento da árvore
 			ID3 id3 = new ID3();
-			id3.generateTree(root, atributos);
+			id3.generateTree(root, registros, atributos);
 
 			//Imprime a arvore resultante no arquivo Result.txt
 			PrintWriter writer = null;

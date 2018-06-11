@@ -8,10 +8,9 @@ public class Ganho {
 	/**
 	 * Calcula o ganho de informacao de determinado atributo
 	 *
-	 * @param dados  - Conjunto de dados
-	 * @param subEntropies - Entropia dos possiveis subgrupos do atributo
-	 * @param setSizes     - Tamanho dos possiveis subgrupos do atributo
-	 * @param data         - Quantidade de registros total
+	 * @param dados  			- Conjunto de dados
+	 * @param atributos 		- Conjunto de atributos
+	 * @param atributoChave     - Atributo chave para calculo do ganho
 	 * @return
 	 */
 	public static double calcula(ArrayList<Registro> dados, ArrayList<Atributo> atributos, String atributoChave) {
@@ -37,10 +36,11 @@ public class Ganho {
 	public static HashMap<String, ArrayList<Registro>> montaSubconj(ArrayList<Registro> dados, ArrayList<Atributo> atributos, String atributoChave) {
 
 		HashMap<String, ArrayList<Registro>> subconj = new HashMap<>();
-
+		String valorAtribAtu;
+		Registro regAtu;
 		for (int i = 0; i < dados.size(); i++) {
-			Registro regAtu = dados.get(i);
-			String valorAtribAtu = regAtu.getDado(atributoChave, atributos);
+			regAtu = dados.get(i);
+			valorAtribAtu = regAtu.getDado(atributoChave, atributos);
 			if (!subconj.containsKey(valorAtribAtu)) {
 				subconj.put(valorAtribAtu, new ArrayList<>());
 			}
