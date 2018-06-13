@@ -6,17 +6,21 @@ public class ID3 {
 	/**
 	 * Gera a arvore de decisao de forma recursiva.
 	 *
-	 * @param records    - Dados a serem classificados pela arvore
-	 * @param root       - No da arvore do topo da arvore para essa iteracao
+	 * @param registros  - Dados a serem classificados pela arvore
 	 * @param atributos  - Atributos a serem utilizados pelo classificador
 	 * @return     - Arvore de decisao
 	 */
-	public Node generateTree(Node root, ArrayList<Registro> registros, ArrayList<Atributo> atributos) {
+	public Node generateTree(ArrayList<Registro> registros, ArrayList<Atributo> atributos) {
+
+	    Node root = null;
+
+        if (atributos.size() <= 0) return root;
+        if (hasSingleClass(registros)) return root;
 
 		//Inicializa as variaveis para selecionar o melhor atributo
 		String melhorAtributo= null;
         String atributoAtual;
-		double melhorGanho = 0.0, ganhoAtu = 0.0;
+		double melhorGanho = 0.0, ganhoAtu;
 
 		//Calcula o melhor ganho para os registros a serem considerados
         for (int i=0; i< atributos.size(); i++) {
@@ -32,13 +36,16 @@ public class ID3 {
         String atribAtu;
 
         //Armazena uma listagem dos atributos restantes para a subarvore
-        ArrayList<String> atribsRestantes = new ArrayList<>();
+        ArrayList<Atributo> atribsRestantes = new ArrayList<>();
         Iterator<Atributo> atribIterator = atributos.iterator();
         while (atribIterator.hasNext()) {
             atribAtu = atribIterator.next().getNome();
-            if (!atribAtu.equals(melhorAtributo)) atribsRestantes.add(atribAtu);
+            if (!atribAtu.equals(melhorAtributo)) atribsRestantes.add(new Atributo(atribAtu));
         }
 
+
+
+        //Montagem da arvore completa:
         root = new Node();
         root.setAtributoTeste(melhorAtributo);
 
@@ -50,10 +57,19 @@ public class ID3 {
         while (subconjRootIT.hasNext()) {
             valorAtrib = subconjRootIT.next();
             subconjRegs = subconjRoot.get(valorAtrib);
-            root.criaRamo(valorAtrib, subconjRegs, criaSubTree(subconjRegs, atribsRestantes));
+            root.criaAresta(valorAtrib, subconjRegs, generateTree(subconjRegs, atribsRestantes));
         }
 		return root;
 	}
 
+
+	public boolean hasSingleClass(ArrayList<Registro> regs) {
+	    String classe = regs.get(0).getClasse(), classeAtu;
+	    for (int i = 1; i<regs.size(); i++) {
+	        classeAtu = regs.get(i).getClasse();
+	        if (!classe.equals(classeAtu)) return false;
+        }
+        return true;
+    }
 
 }

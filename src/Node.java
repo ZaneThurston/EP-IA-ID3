@@ -6,10 +6,7 @@ public class Node {
 
 	// no eh interno (decisao)
 	private String atributo;
-
-
-	private Map<String, Node> childs;
-			Node parent;
+	private Map<String, Aresta> arestas;
 
 	public Node(){}
 
@@ -17,16 +14,13 @@ public class Node {
 
 	public void setAtributoTeste(String atributo) { this.atributo = atributo; }
 
-	public String getClasse() { if (folha) return classe; else return null;}
+	//public String getClasse() { if (folha) return classe; else return null;}
 
-	public Node getChild() { return childs.get(classe); }
+	public void criaAresta(String valor, ArrayList<Registro> registros, Node pai) {
+		Aresta a = new Aresta(valor, registros, pai);
+		this.arestas.put(valor, a);
+	}
 
-	public Node getChild(String valor) { if(!folha) return childs.get(valor); else return null; }
-
-
-
-	public ArrayList<Registro> getDados(){ return registros; }
-
-
+	public Aresta getAresta(String valor) { return arestas.get(valor); }
 
 }
