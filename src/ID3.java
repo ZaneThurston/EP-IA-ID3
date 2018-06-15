@@ -30,9 +30,12 @@ public class ID3 {
             if (ganhoAtu > melhorGanho) {
                 melhorAtributo = atributoAtual;
                 melhorGanho = ganhoAtu;
+//                System.out.println("Melhor atributo é: " + melhorAtributo);
             }
         }
 
+    	
+        
         String atribAtu;
 
         //Armazena uma listagem dos atributos restantes para a subarvore
@@ -42,8 +45,6 @@ public class ID3 {
             atribAtu = atribIterator.next().getNome();
             if (!atribAtu.equals(melhorAtributo)) atribsRestantes.add(new Atributo(atribAtu));
         }
-
-
 
         //Montagem da arvore completa:
         root = new Node();

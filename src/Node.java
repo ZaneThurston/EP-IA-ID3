@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -6,7 +7,7 @@ public class Node {
 
 	// no eh interno (decisao)
 	private String atributo;
-	private Map<String, Aresta> arestas;
+	private HashMap<String, Aresta> arestas = new HashMap<String, Aresta>();
 
 	public Node(){}
 

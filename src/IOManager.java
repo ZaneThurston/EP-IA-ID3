@@ -8,27 +8,27 @@ import java.util.ArrayList;
 
 public class IOManager {
 
-	private static String SEPARADOR = "; ";
+	private static String SEPARADOR = ";";
 
 	public void setSeparador(String newSep){ this.SEPARADOR = newSep; }
 
 	// todo: WIP CONSTRUCAO DA SAIDA
-	public static void writeArvore(String path, Node raiz) {
-		try {
-			PrintWriter wr = new PrintWriter(path, "UTF-8");
-			String linha;
-
-			if (raiz.getAtributoTeste().getNome().isEmpty()) {
-				//linha = raiz.getAtributoTeste().getValor();
-
-
-			}
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e3) {
-			e3.printStackTrace();
-		}
-	}
+//	public static void writeArvore(String path, Node raiz) {
+//		try {
+//			PrintWriter wr = new PrintWriter(path, "UTF-8");
+//			String linha;
+//
+////			if (raiz.getAtributoTeste().getNome().isEmpty()) {
+////				//linha = raiz.getAtributoTeste().getValor();
+////
+////
+////			}
+//		} catch (UnsupportedEncodingException e) {
+//			e.printStackTrace();
+//		} catch (FileNotFoundException e3) {
+//			e3.printStackTrace();
+//		}
+//	}
 
 	// leitura do arquivo de entrada
 	public static void readDataset(String path, ArrayList<Atributo> atributos, ArrayList<Registro> registros) {
@@ -40,7 +40,7 @@ public class IOManager {
 			linha = rd.readLine();
 			atribs = linha.split(SEPARADOR);
 
-			for (int i = 0; i < atribs.length; i++) atributos.add(new Atributo(atribs[i]));
+			for (int i = 0; i < atribs.length - 1; i++) atributos.add(new Atributo(atribs[i]));
 
 			while((linha = rd.readLine()) != null) {
 				registros.add(new Registro(linha.split(SEPARADOR)));

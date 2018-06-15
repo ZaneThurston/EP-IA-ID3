@@ -33,9 +33,9 @@ public class Main {
 			//Imprime a arvore resultante no arquivo Result.txt
 			PrintWriter writer = null;
 
-			IOManager.writeArvore(args[0], root);
+//			IOManager.writeArvore(args[0], root);
 
 			//Fecha o arquivo
-			writer.close();
+//			writer.close();
 		}
 }
