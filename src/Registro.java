@@ -16,8 +16,9 @@ public class Registro {
 	public String[] getDados() { return dados; }
 
 	public String getDado(String atributo, ArrayList<Atributo> ListAtributos) {
-        for (int i = 0; i<ListAtributos.size(); i++) {
-            if (ListAtributos.get(i).getNome() == atributo){
+
+        for (int i = 0; i < Main.atributos.size(); i++) {
+            if (Main.atributos.get(i).getNome() == atributo){
                 return dados[i];
             }
         }

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class Main {
 
+	static ArrayList<Atributo> atributos = new ArrayList<>();
 
 		/**
 		 * Função main, ela que irá carregar os dados e iniciar o processamento da árvore.
@@ -18,7 +19,6 @@ public class Main {
 			}
 
 			//Carrega os atributos e registros da base de dados
-			ArrayList<Atributo> atributos = new ArrayList<>();
 			ArrayList<Registro> registros = new ArrayList<>();
 			IOManager.readDataset(args[0], atributos, registros);
 
