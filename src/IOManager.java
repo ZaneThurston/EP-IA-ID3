@@ -10,7 +10,7 @@ public class IOManager {
 
 	private static String SEPARADOR = ";";
 
-	public void setSeparador(String newSep){ this.SEPARADOR = newSep; }
+	public static void setSeparador(String newSep){ SEPARADOR = newSep; }
 
 	// todo: WIP CONSTRUCAO DA SAIDA
 //	public static void writeArvore(String path, Node raiz) {

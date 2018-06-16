@@ -5,15 +5,15 @@ import java.util.Iterator;
 public class Aresta {
 	private String valor;
 	private ArrayList<Registro> registros;
-	private Node raiz;
+	private Node child;
 
-	public Aresta(String valor, ArrayList<Registro> registros, Node raiz) {
+	public Aresta(String valor, ArrayList<Registro> registros, Node child) {
 		this.valor = valor;
 		this.registros = registros;
-		this.raiz = raiz;
+		this.child = child;
 	}
 
-	public Node getRaiz() { return raiz; }
+	public Node getRaiz() { return child; }
 
 	public String getClasseMajor() {
 

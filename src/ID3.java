@@ -37,57 +37,38 @@ public class ID3 {
             }
         }
         
-        System.out.println("\n###########Melhor atributo é: " + melhorAtributo + "\n\n\n");
+        System.out.println("\n###########Melhor atributo eh: " + melhorAtributo + "\n\n\n");
         String atribAtu;
 
-        if(melhorGanho == 0.0) {
-        	//Montagem da arvore completa:
-        	root = new Node();
-        	root.setAtributoTeste(melhorAtributo);
-        	
-        	String valorAtrib = "";
-        	ArrayList<Registro> subconjRegs;
-        	
-        	HashMap<String, ArrayList<Registro>> subconjRoot = Ganho.montaSubconj(registros, atributos, melhorAtributo);
-        	Iterator<String> subconjRootIT = subconjRoot.keySet().iterator();
-        	while (subconjRootIT.hasNext()) {
-        		valorAtrib = subconjRootIT.next();
-        		subconjRegs = subconjRoot.get(valorAtrib);
-        		root.criaAresta(valorAtrib, subconjRegs, null);
-        		Main.numArestas++;
-        	}
-        	Main.numNodes++;
-        	return root;
-        } else {
-        	//Armazena uma listagem dos atributos restantes para a subarvore
-        	ArrayList<Atributo> atribsRestantes = new ArrayList<>();
-        	Iterator<Atributo> atribIterator = atributos.iterator();
-        	while (atribIterator.hasNext()) {
-        		atribAtu = atribIterator.next().getNome();
-        		if (!atribAtu.equals(melhorAtributo)) {
-        			atribsRestantes.add(new Atributo(atribAtu));
-        		}
-        	}
-        	
-        	//Montagem da arvore completa:
-        	root = new Node();
-        	root.setAtributoTeste(melhorAtributo);
-        	
-        	String valorAtrib = "";
-        	ArrayList<Registro> subconjRegs;
-        	
-        	HashMap<String, ArrayList<Registro>> subconjRoot = Ganho.montaSubconj(registros, atributos, melhorAtributo);
-        	Iterator<String> subconjRootIT = subconjRoot.keySet().iterator();
-        	while (subconjRootIT.hasNext()) {
-        		valorAtrib = subconjRootIT.next();
-        		subconjRegs = subconjRoot.get(valorAtrib);
-        		root.criaAresta(valorAtrib, subconjRegs, generateTree(subconjRegs, atribsRestantes));
-        		Main.numArestas++;
-        	}
-        	Main.numNodes++;
-        	return root;
+        //Montagem da arvore completa:
+        root = new Node();
+        root.setAtributoTeste(melhorAtributo);
+
+        String valorAtrib = "";
+        ArrayList<Registro> subconjRegs;
+
+        //Armazena uma listagem dos atributos restantes para a subarvore
+        ArrayList<Atributo> atribsRestantes = new ArrayList<>();
+        Iterator<Atributo> atribIterator = atributos.iterator();
+        while (atribIterator.hasNext()) {
+            atribAtu = atribIterator.next().getNome();
+            if (!atribAtu.equals(melhorAtributo)) {
+                atribsRestantes.add(new Atributo(atribAtu));
+            }
         }
-        
+
+        HashMap<String, ArrayList<Registro>> subconjRoot = Ganho.montaSubconj(registros, atributos, melhorAtributo);
+        Iterator<String> subconjRootIT = subconjRoot.keySet().iterator();
+
+        while (subconjRootIT.hasNext()) {
+        	valorAtrib = subconjRootIT.next();
+        	subconjRegs = subconjRoot.get(valorAtrib);
+        	if(melhorGanho == 0.0) root.criaAresta(valorAtrib, subconjRegs, null);
+            else root.criaAresta(valorAtrib, subconjRegs, generateTree(subconjRegs, atribsRestantes));
+        	Main.numArestas++;
+        }
+        Main.numNodes++;
+        return root;
 	}
 
 

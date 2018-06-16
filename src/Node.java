@@ -17,8 +17,8 @@ public class Node {
 
 	//public String getClasse() { if (folha) return classe; else return null;}
 
-	public void criaAresta(String valor, ArrayList<Registro> registros, Node pai) {
-		Aresta a = new Aresta(valor, registros, pai);
+	public void criaAresta(String valor, ArrayList<Registro> registros, Node seguinte) {
+		Aresta a = new Aresta(valor, registros, seguinte);
 		this.arestas.put(valor, a);
 	}
 
