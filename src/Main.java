@@ -4,6 +4,8 @@ import java.util.ArrayList;
 public class Main {
 
 	static ArrayList<Atributo> atributos = new ArrayList<>();
+	static int numNodes = 0;
+	static int numArestas = 0;
 
 		/**
 		 * Função main, ela que irá carregar os dados e iniciar o processamento da árvore.
@@ -31,7 +33,9 @@ public class Main {
 			root = id3.generateTree(registros, atributos);
 
 			//Imprime a arvore resultante no arquivo Result.txt
-			PrintWriter writer = null;
+//			PrintWriter writer = null;
+			System.out.println("acabou com: " + numNodes);
+			System.out.println("acabou com: " + numArestas);
 
 //			IOManager.writeArvore(args[0], root);
 
