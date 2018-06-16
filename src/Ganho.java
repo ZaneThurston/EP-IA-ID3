@@ -20,6 +20,7 @@ public class Ganho {
 		// variaveis para o calculo das subentropías
 		String atribValAtu;
 		ArrayList<Registro> subconjAtu;
+		System.out.println("Atributo atual: " + atributoChave);
 
 
 		Iterator<String> subconjIterator = subconj.keySet().iterator();
@@ -30,6 +31,9 @@ public class Ganho {
 			double gainSubAtu = ((new Integer(subconjAtu.size())).doubleValue() / (new Integer(dados.size())).doubleValue()) * Entropia.calcula(subconjAtu);
 			gain = gain - gainSubAtu;
 		}
+		
+//		System.out.println(gain);
+		
 		return gain;
 	}
 
@@ -42,7 +46,7 @@ public class Ganho {
 			regAtu = dados.get(i);
 			valorAtribAtu = regAtu.getDado(atributoChave, atributos);
 			if (!subconj.containsKey(valorAtribAtu)) {
-				subconj.put(valorAtribAtu, new ArrayList<>());
+				subconj.put(valorAtribAtu, new ArrayList<Registro>());
 			}
 			subconj.get(valorAtribAtu).add(regAtu);
 
