@@ -67,7 +67,7 @@ public class IOManager {
     			newRule = newRule + " THEN " + raiz.getAresta(valorAtrib).getClasseMajor();
     			wr.write(newRule);
     			wr.println();
-    			System.out.println(newRule);
+    			//System.out.println(newRule);
     		} else {
     			newRule = newRule + " AND " + raiz.getAresta(valorAtrib).getChild().getAtributoTeste();
     			printPathsRecur(raiz.getAresta(valorAtrib).getChild(), newRule, wr);

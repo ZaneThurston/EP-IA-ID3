@@ -9,22 +9,40 @@ public class Apoda {
 	ArrayList<Registro> training;
 
     public Apoda() {
-    	
-    	this.test = Main.testRegs;
-    	validation = Main.foldedExamples.get(0);
-    	training = Main.foldedExamples.get(1);
+		Main.kFold(3, true);
+		test = new ArrayList<>();
+		validation = new ArrayList<>();
+		training = new ArrayList<>();
+
+		test.addAll(Main.testRegs);
+		validation.addAll(Main.foldedExamples.get(0));
+		training.addAll(Main.foldedExamples.get(1));
+
     }
     
-	ID3 id3 = new ID3();
-    Node root = id3.generateTree(Main.foldedExamples.get(1), Main.atributos);
-    
-    
-    
-    
-    
-    
-	public double calcError() {
-        double error = 0.0;
-        return error;
-    }
+    public Node criaArvore(ID3 id3) {
+		Node root = id3.generateTree(training, Main.atributos);
+		return root;
+	}
+
+	public double testArvore(Node root) {
+    	boolean classificaResult = false;
+    	double countErros = 0, n = test.size();
+		for (int j = 0; j < test.size(); j++) {
+			classificaResult = Main.classifica(root, test.get(j));
+			if (!classificaResult) countErros++;
+		}
+		return 1 - (countErros / n);
+	}
+
+	public void podaArvore(Node root, double accur) {
+		boolean classificaResult = false;
+		double countErros = 0, n = test.size();
+		for (int j = 0; j < test.size(); j++) {
+			classificaResult = Main.classifica(root, validation.get(j));
+			if (!classificaResult) countErros++;
+		}
+	}
+
+
 }
