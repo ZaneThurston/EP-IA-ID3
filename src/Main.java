@@ -14,8 +14,10 @@ public class Main {
 	static int numNodes = 0;
 	static int numArestas = 0;
 
+	private static final double CONFIDENCE_INTERVAL_CONSTANT = 1.96;
 
 
+    // Dado um exemplo e a raiz do classificador, valida o exemplo no classificador
     public static boolean classifica(Node root, Registro exemplo) {
 
         Node rootIt = root;
@@ -23,14 +25,10 @@ public class Main {
 
         while (rootIt != null) {
             aresta = rootIt.getAresta(exemplo.getDado(rootIt.getAtributoTeste(), atributos));
-            //debug
-            if (aresta == null) {
-               // System.out.println("ARESTA NULA AQUI");
-                return false;
-            }
 
-
+            if (aresta == null) return false;
             if (aresta.getChild() == null) break;
+
             rootIt = aresta.getChild();
         }
 
@@ -103,20 +101,21 @@ public class Main {
             nExemplos = testRegs.size();
             errors[i] = (countErros / nExemplos);
 
-            ArrayList<Registro> newTestExamples = new ArrayList<>(foldedExamples.get(i));
-            ArrayList<Registro> newSubTrainExamples = new ArrayList<>(testRegs);
+            if(i != foldedExamples.size()) {
+                ArrayList<Registro> newTestExamples = new ArrayList<>(foldedExamples.get(i));
+                ArrayList<Registro> newSubTrainExamples = new ArrayList<>(testRegs);
 
-            foldedExamples.put(i, newSubTrainExamples);
-            testRegs.clear();
-            testRegs = newTestExamples;
-
+                foldedExamples.put(i, newSubTrainExamples);
+                testRegs.clear();
+                testRegs = newTestExamples;
+            }
             calculatedError += errors[i];
             System.out.println("Arvore "+i+" acabou com: " + numNodes+ " nos.");
             System.out.println("Arvore "+i+" acabou com: " + numArestas+ " arestas.");
-            System.out.println("Erro da arvore: "+errors[i] * 100);
+            System.out.println("Erro da arvore: "+errors[i]);
         }
 
-        calculatedError = calculatedError / k * 100;
+        calculatedError = calculatedError / k;
         System.out.println("Erro calculado total: "+calculatedError);
         return calculatedError;
     }
@@ -141,7 +140,15 @@ public class Main {
 
 		//Inicia o processamento da árvore
         kFold(10, true);
-        crossValidation();
+        double erro = crossValidation();
+        double n = registros.size();
+
+        double se =  Math.sqrt((erro * (1-erro)) / n);
+        double minErr = erro - (CONFIDENCE_INTERVAL_CONSTANT * se);
+        double maxErr = erro + (CONFIDENCE_INTERVAL_CONSTANT * se);
+
+        System.out.println("O erro verdadeiro do classificador esta entre "+minErr+" e "+maxErr);
+
 		//ID3 id3 = new ID3();
 		//root = id3.generateTree(registros, atributos);
 
