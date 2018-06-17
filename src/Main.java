@@ -23,7 +23,15 @@ public class Main {
 
         while (rootIt != null) {
             aresta = rootIt.getAresta(exemplo.getDado(rootIt.getAtributoTeste(), atributos));
-            if (aresta != null) rootIt = aresta.getChild();
+            //debug
+            if (aresta == null) {
+               // System.out.println("ARESTA NULA AQUI");
+                return false;
+            }
+
+
+            if (aresta.getChild() == null) break;
+            rootIt = aresta.getChild();
         }
 
         return aresta.getClasseMajor().equals(exemplo.getClasse());
@@ -64,10 +72,11 @@ public class Main {
     }
 
     // Apos separados os subconjuntos, o crossValidation calcula o erro medio do classificador
-    public static float crossValidation() {
-        int countErros = 0, nExemplos, k = foldedExamples.size()+1;
-        float calculatedError = 0;
-        float[] errors = new float[k];
+    public static double crossValidation() {
+        double countErros = 0, nExemplos;
+        int k = foldedExamples.size()+1;
+        double calculatedError = 0;
+        double[] errors = new double[k];
         boolean classificaResult = false;
 
         Node root;
@@ -91,19 +100,21 @@ public class Main {
                 if (!classificaResult) countErros++;
             }
             nExemplos = testRegs.size();
-            errors[i] = countErros / nExemplos;
+            errors[i] = (countErros / nExemplos);
 
+            trainExamples.clear();
             trainExamples = foldedExamples.get(i);
             foldedExamples.replace(i, testRegs);
+            testRegs.clear();
             testRegs = trainExamples;
 
             calculatedError += errors[i];
-            System.out.println("Arvore "+i+1+" acabou com: " + numNodes+ " nos.");
-            System.out.println("Arvore "+i+1+" acabou com: " + numArestas+ " arestas.");
-            System.out.println("Erro da arvore: "+errors[i]);
+            System.out.println("Arvore "+i+" acabou com: " + numNodes+ " nos.");
+            System.out.println("Arvore "+i+" acabou com: " + numArestas+ " arestas.");
+            System.out.println("Erro da arvore: "+errors[i] * 100);
         }
 
-        calculatedError = calculatedError / k;
+        calculatedError = calculatedError / k * 100;
         System.out.println("Erro calculado total: "+calculatedError);
         return calculatedError;
     }
