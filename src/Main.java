@@ -89,6 +89,7 @@ public class Main {
         for (int i = 0; i < k; i++) {
             numNodes = 0;
             numArestas = 0;
+            countErros = 0;
             trainExamples.clear();
             for (int j = 0; j < foldedExamples.size(); j++) {
                 trainExamples.addAll(foldedExamples.get(j));
@@ -102,11 +103,12 @@ public class Main {
             nExemplos = testRegs.size();
             errors[i] = (countErros / nExemplos);
 
-            trainExamples.clear();
-            trainExamples = foldedExamples.get(i);
-            foldedExamples.replace(i, testRegs);
+            ArrayList<Registro> newTestExamples = new ArrayList<>(foldedExamples.get(i));
+            ArrayList<Registro> newSubTrainExamples = new ArrayList<>(testRegs);
+
+            foldedExamples.put(i, newSubTrainExamples);
             testRegs.clear();
-            testRegs = trainExamples;
+            testRegs = newTestExamples;
 
             calculatedError += errors[i];
             System.out.println("Arvore "+i+" acabou com: " + numNodes+ " nos.");
