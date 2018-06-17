@@ -1,0 +1,5 @@
+IF clima IS sol AND umidade IS normal THEN sim
+IF clima IS sol AND umidade IS alta THEN não
+IF clima IS nublado THEN sim
+IF clima IS chuva AND vento IS fraco THEN sim
+IF clima IS chuva AND vento IS forte THEN não
