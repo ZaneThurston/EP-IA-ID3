@@ -20,8 +20,6 @@ public class Ganho {
 		// variaveis para o calculo das subentropías
 		String atribValAtu;
 		ArrayList<Registro> subconjAtu;
-		System.out.println("Atributo atual: " + atributoChave);
-
 
 		Iterator<String> subconjIterator = subconj.keySet().iterator();
 		while (subconjIterator.hasNext()) {

@@ -7,13 +7,15 @@ public class Aresta {
 	private ArrayList<Registro> registros;
 	private Node child;
 
+	public Aresta() {}
+
 	public Aresta(String valor, ArrayList<Registro> registros, Node child) {
 		this.valor = valor;
 		this.registros = registros;
 		this.child = child;
 	}
 
-	public Node getRaiz() { return child; }
+	public Node getChild() { return child; }
 
 	public String getClasseMajor() {
 

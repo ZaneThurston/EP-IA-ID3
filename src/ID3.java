@@ -24,20 +24,20 @@ public class ID3 {
 
 		//Calcula o melhor ganho para os registros a serem considerados
 //        System.out.print("Lista de atributos: ");
-		System.out.println("======================================");
+		//System.out.println("======================================");
 		for (int i=0; i< atributos.size(); i++) {
             atributoAtual = atributos.get(i).getNome();
             ganhoAtu = Ganho.calcula(registros, atributos, atributoAtual);
             atributos.get(i).setGanho(ganhoAtu);
-            System.out.println("Melhor: " + melhorGanho);
-            System.out.println("Ganho atual: " + ganhoAtu);
+            //System.out.println("Melhor: " + melhorGanho);
+            //System.out.println("Ganho atual: " + ganhoAtu);
             if (ganhoAtu > melhorGanho) {
                 melhorAtributo = atributoAtual;
                 melhorGanho = ganhoAtu;
             }
         }
         
-        System.out.println("\n###########Melhor atributo eh: " + melhorAtributo + "\n\n\n");
+        //System.out.println("\n###########Melhor atributo eh: " + melhorAtributo + "\n\n\n");
         String atribAtu;
 
         //Montagem da arvore completa:

@@ -5,17 +5,33 @@ import java.util.Random;
 public class Main {
 
 	static ArrayList<Atributo> atributos = new ArrayList<>();
-    static ArrayList<Registro> registros;
+    static ArrayList<Registro> registros = new ArrayList<>();
 
     // para o k-fold cross validation:
-    static ArrayList<Registro> testRegs;
-    static HashMap<Integer, ArrayList<Registro>> foldedExamples;
+    static ArrayList<Registro> testRegs = new ArrayList<>();
+    static HashMap<Integer, ArrayList<Registro>> foldedExamples = new HashMap<>();
 
 	static int numNodes = 0;
 	static int numArestas = 0;
 
+
+
+    public static boolean classifica(Node root, Registro exemplo) {
+
+        Node rootIt = root;
+        Aresta aresta = new Aresta();
+
+        while (rootIt != null) {
+            aresta = rootIt.getAresta(exemplo.getDado(rootIt.getAtributoTeste(), atributos));
+            if (aresta != null) rootIt = aresta.getChild();
+        }
+
+        return aresta.getClasseMajor().equals(exemplo.getClasse());
+    }
+
+
     // Dado um int K, separa o conjunto de exemplos em K subconjuntos, sendo 1 de teste e k-1 de treino
-    public void kFold(int k, boolean permuta) {
+    public static void kFold(int k, boolean permuta) {
         if (k == 0 || k > registros.size()) {
             return;
         }
@@ -31,7 +47,7 @@ public class Main {
             for (int i = 0; i<indices.length; i++) indices[i] = i;
         }
 
-        sizeFregs = k/n;
+        sizeFregs = n/k;
 
         for (int i = 0; i < sizeFregs; i++) {
             testRegs.add(registros.get(indices[i]));
@@ -47,31 +63,48 @@ public class Main {
         }
     }
 
-    public double crossValidation() {
-        double calculatedError = 0.0;
-        double[] errors;
+    // Apos separados os subconjuntos, o crossValidation calcula o erro medio do classificador
+    public static float crossValidation() {
+        int countErros = 0, nExemplos, k = foldedExamples.size()+1;
+        float calculatedError = 0;
+        float[] errors = new float[k];
+        boolean classificaResult = false;
+
         Node root;
 
         ArrayList<Registro> trainExamples = new ArrayList<>();
         ID3 id3;
 
 
-        for (int i = 0; i < foldedExamples.size() + 1; i++) {
+
+        for (int i = 0; i < k; i++) {
+            numNodes = 0;
+            numArestas = 0;
+            trainExamples.clear();
             for (int j = 0; j < foldedExamples.size(); j++) {
                 trainExamples.addAll(foldedExamples.get(j));
             }
             id3 = new ID3();
             root = id3.generateTree(trainExamples, atributos);
+            for (int j = 0; j < testRegs.size(); j++) {
+                classificaResult = classifica(root, testRegs.get(j));
+                if (!classificaResult) countErros++;
+            }
+            nExemplos = testRegs.size();
+            errors[i] = countErros / nExemplos;
 
+            trainExamples = foldedExamples.get(i);
+            foldedExamples.replace(i, testRegs);
+            testRegs = trainExamples;
 
-
-
+            calculatedError += errors[i];
+            System.out.println("Arvore "+i+1+" acabou com: " + numNodes+ " nos.");
+            System.out.println("Arvore "+i+1+" acabou com: " + numArestas+ " arestas.");
+            System.out.println("Erro da arvore: "+errors[i]);
         }
 
-
-
-
-
+        calculatedError = calculatedError / k;
+        System.out.println("Erro calculado total: "+calculatedError);
         return calculatedError;
     }
 
@@ -87,20 +120,21 @@ public class Main {
 			return;
 		}
 		//Carrega os atributos e registros da base de dados
-		registros = new ArrayList<>();
 		IOManager.readDataset(args[0], atributos, registros);
 
+
 		//Instancia a raiz da arvore:
-		Node root;
+		//Node root;
 
 		//Inicia o processamento da árvore
-		ID3 id3 = new ID3();
-		root = id3.generateTree(registros, atributos);
+        kFold(10, true);
+        crossValidation();
+		//ID3 id3 = new ID3();
+		//root = id3.generateTree(registros, atributos);
 
 		//Imprime a arvore resultante no arquivo Result.txt
 //		PrintWriter writer = null;
-		System.out.println("acabou com: " + numNodes);
-		System.out.println("acabou com: " + numArestas);
+
 
 //		IOManager.writeArvore(args[0], root);
 
