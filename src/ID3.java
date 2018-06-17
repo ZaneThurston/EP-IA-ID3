@@ -23,27 +23,19 @@ public class ID3 {
 		double melhorGanho = 0.0, ganhoAtu;
 
 		//Calcula o melhor ganho para os registros a serem considerados
-//        System.out.print("Lista de atributos: ");
-//		System.out.println("======================================");
 		for (int i=0; i< atributos.size(); i++) {
             atributoAtual = atributos.get(i).getNome();
             ganhoAtu = Ganho.calcula(registros, atributos, atributoAtual);
             atributos.get(i).setGanho(ganhoAtu);
-//            System.out.println("Melhor: " + melhorGanho);
-//            System.out.println("Ganho atual: " + ganhoAtu);
             if (ganhoAtu > melhorGanho) {
                 melhorAtributo = atributoAtual;
                 melhorGanho = ganhoAtu;
             }
         }
         
-//        System.out.println("\n###########Melhor atributo é: " + melhorAtributo + "\n\n\n");
         String atribAtu;
 
         //Montagem da arvore completa:
-//        if(melhorGanho == 0.0) melhorAtributo = atributoAtual;
-
-        
         String valorAtrib = "";
         ArrayList<Registro> subconjRegs;
         root = new Node();
@@ -102,7 +94,6 @@ public class ID3 {
         	return root;
         }
 	}
-
 
 	public boolean hasSingleClass(ArrayList<Registro> regs) {
 	    String classe = regs.get(0).getClasse(), classeAtu;

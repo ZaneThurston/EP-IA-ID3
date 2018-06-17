@@ -11,7 +11,7 @@ public class IOManager {
 
 	private static String SEPARADOR = ";";
 
-	public void setSeparador(String newSep){ this.SEPARADOR = newSep; }
+	public static void setSeparador(String newSep){ SEPARADOR = newSep; }
 
 	// todo: WIP CONSTRUCAO DA SAIDA
 	public static void writeArvore(String path, Node raiz) {
@@ -58,12 +58,12 @@ public class IOManager {
     	while(raizIT.hasNext()) {
     		valorAtrib = raizIT.next();
     		newRule = rule + " IS " + valorAtrib;
-    		if(raiz.getAresta(valorAtrib).getRaiz() == null) {
+    		if(raiz.getAresta(valorAtrib).getChild() == null) {
     			newRule = newRule + " THEN " + raiz.getAresta(valorAtrib).getClasseMajor();
     			System.out.println(newRule);
     		} else {
-    			newRule = newRule + " AND " + raiz.getAresta(valorAtrib).getRaiz().getAtributoTeste();
-    			printPathsRecur(raiz.getAresta(valorAtrib).getRaiz(), newRule);
+    			newRule = newRule + " AND " + raiz.getAresta(valorAtrib).getChild().getAtributoTeste();
+    			printPathsRecur(raiz.getAresta(valorAtrib).getChild(), newRule);
     		}
     	}
     }
