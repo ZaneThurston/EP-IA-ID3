@@ -23,5 +23,5 @@ public class Node {
 	}
 
 	public Aresta getAresta(String valor) { return arestas.get(valor); }
-
+	public HashMap<String, Aresta> getSetArestas() { return arestas; }
 }

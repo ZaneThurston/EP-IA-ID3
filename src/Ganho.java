@@ -17,10 +17,10 @@ public class Ganho {
 		double gain = Entropia.calcula(dados);
 		HashMap<String, ArrayList<Registro>> subconj = montaSubconj(dados, atributos, atributoChave);
 
-		// variaveis para o calculo das subentropías
+		// variaveis para o calculo das subentropÃ­as
 		String atribValAtu;
 		ArrayList<Registro> subconjAtu;
-		System.out.println("Atributo atual: " + atributoChave);
+//		System.out.println("Atributo atual: " + atributoChave);
 
 
 		Iterator<String> subconjIterator = subconj.keySet().iterator();

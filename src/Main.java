@@ -37,7 +37,7 @@ public class Main {
 			System.out.println("acabou com: " + numNodes);
 			System.out.println("acabou com: " + numArestas);
 
-//			IOManager.writeArvore(args[0], root);
+			IOManager.writeArvore(args[1], root);
 
 			//Fecha o arquivo
 //			writer.close();
