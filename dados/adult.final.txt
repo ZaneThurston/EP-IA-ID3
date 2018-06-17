@@ -1,4 +1,4 @@
-﻿age;workclass;education;marital-status;occupation;relationship;race;sex;capital-gain;capital-loss;hours-per-week;native-country;result
+age;workclass;education;marital-status;occupation;relationship;race;sex;capital-gain;capital-loss;hours-per-week;native-country;result
 [36-44);State-gov;Bachelors;Never-married;Adm-clerical;Not-in-family;White;Male;[57-3048);[-inf-1552);[40-42);United-States;<=50K
 [44-62);Self-emp-not-inc;Bachelors;Married-civ-spouse;Exec-managerial;Husband;White;Male;[-inf-57);[-inf-1552);[-inf-35);United-States;<=50K
 [36-44);Private;HS-grad;Divorced;Handlers-cleaners;Not-in-family;White;Male;[-inf-57);[-inf-1552);[40-42);United-States;<=50K

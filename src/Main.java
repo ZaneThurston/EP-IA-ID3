@@ -121,24 +121,23 @@ public class Main {
     }
 
 		/**
-		 * Função main, ela que irá carregar os dados e iniciar o processamento da árvore.
+		 * FunÃ§Ã£o main, ela que irÃ¡ carregar os dados e iniciar o processamento da Ã¡rvore.
 		 *
 		 * @param args
 		 */
 	public static void main(String[] args) {
-    	//Caminho para a pasta onde será lido o arquivo com a base de dados
-		if (args.length < 1) {
-			System.out.println(" Informe caminho do arquivo de dados! ");
+    	//Caminho para a pasta onde serÃ¡ lido o arquivo com a base de dados
+		if (args.length < 2) {
+			System.out.println(" Informe caminho dos arquivos de entrada e saída! ");
 			return;
 		}
 		//Carrega os atributos e registros da base de dados
 		IOManager.readDataset(args[0], atributos, registros);
 
-
 		//Instancia a raiz da arvore:
-		//Node root;
+		Node root;
 
-		//Inicia o processamento da árvore
+		//Inicia o processamento da Ã¡rvore
         kFold(10, true);
         double erro = crossValidation();
         double n = registros.size();
@@ -149,23 +148,15 @@ public class Main {
 
         System.out.println("O erro verdadeiro do classificador esta entre "+minErr+" e "+maxErr);
 
-		//ID3 id3 = new ID3();
-		//root = id3.generateTree(registros, atributos);
+		ID3 id3 = new ID3();
+		root = id3.generateTree(registros, atributos);
 
 		//Imprime a arvore resultante no arquivo Result.txt
 //		PrintWriter writer = null;
 
-
-//		IOManager.writeArvore(args[0], root);
+		IOManager.writeArvore(args[1], root);
 
 		//Fecha o arquivo
 //		writer.close();
 	}
-
-
-
-
-
-
-
 }

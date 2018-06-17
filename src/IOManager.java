@@ -1,5 +1,10 @@
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 // Classe que implementa um manipulador de entrada e saida
 // assume-se que o conjunto de dados esteja discretizado
@@ -12,23 +17,22 @@ public class IOManager {
 
 	public static void setSeparador(String newSep){ SEPARADOR = newSep; }
 
+
 	// todo: WIP CONSTRUCAO DA SAIDA
-//	public static void writeArvore(String path, Node raiz) {
-//		try {
-//			PrintWriter wr = new PrintWriter(path, "UTF-8");
-//			String linha;
-//
-////			if (raiz.getAtributoTeste().getNome().isEmpty()) {
-////				//linha = raiz.getAtributoTeste().getValor();
-////
-////
-////			}
-//		} catch (UnsupportedEncodingException e) {
-//			e.printStackTrace();
-//		} catch (FileNotFoundException e3) {
-//			e3.printStackTrace();
-//		}
-//	}
+	public static void writeArvore(String path, Node raiz) {
+		try {
+			PrintWriter wr = new PrintWriter(path, "UTF-8");
+			
+			String rule = "IF " + raiz.getAtributoTeste(); 
+			printPathsRecur(raiz, rule, wr);
+			wr.close();
+			
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e3) {
+			e3.printStackTrace();
+		}
+	}
 
 	// leitura do arquivo de entrada
 	public static void readDataset(String path, ArrayList<Atributo> atributos, ArrayList<Registro> registros) {
@@ -50,5 +54,24 @@ public class IOManager {
 			System.out.println("Erro ao ler arquivo de entrada");
 		}
 	}
-
+	
+    static void printPathsRecur(Node raiz, String rule, PrintWriter wr) {
+    	
+    	Iterator<String> raizIT = raiz.getSetArestas().keySet().iterator();
+    	String valorAtrib;
+    	String newRule;
+    	while(raizIT.hasNext()) {
+    		valorAtrib = raizIT.next();
+    		newRule = rule + " IS " + valorAtrib;
+    		if(raiz.getAresta(valorAtrib).getChild() == null) {
+    			newRule = newRule + " THEN " + raiz.getAresta(valorAtrib).getClasseMajor();
+    			wr.write(newRule);
+    			wr.println();
+    			System.out.println(newRule);
+    		} else {
+    			newRule = newRule + " AND " + raiz.getAresta(valorAtrib).getChild().getAtributoTeste();
+    			printPathsRecur(raiz.getAresta(valorAtrib).getChild(), newRule, wr);
+    		}
+    	}
+    }
 }
