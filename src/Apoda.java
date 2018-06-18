@@ -37,10 +37,32 @@ public class Apoda {
 
 	public void podaArvore(Node root, double accur) {
 		boolean classificaResult = false;
-		double countErros = 0, n = test.size();
-		for (int j = 0; j < test.size(); j++) {
-			classificaResult = Main.classifica(root, validation.get(j));
-			if (!classificaResult) countErros++;
+		double countErros = 0, n = validation.size(), accurTemp = 0;
+
+		while (accurTemp < accur) {
+			for (int j = 0; j < validation.size(); j++) {
+
+
+
+				Node rootIt = root;
+				Aresta aresta = new Aresta();
+
+				while (rootIt != null && aresta != null) {
+					aresta = rootIt.getAresta(validation.get(j).getDado(rootIt.getAtributoTeste(), Main.atributos));
+
+					if (aresta.getChild() == null) {
+						classificaResult = false;
+						break;
+					}
+
+					rootIt = aresta.getChild();
+				}
+
+				classificaResult = aresta.getClasseMajor().equals(validation.get(j).getClasse());
+
+				if (!classificaResult) countErros++;
+			}
+			accurTemp = 1 - (countErros / n);
 		}
 	}
 
