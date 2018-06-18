@@ -17,4 +17,4 @@ ou
       
       java Main /dados/playtennis.txt /dados/playtennis.rules.txt
       
-O primeiro é o arquivo de entrada, e o segundo o de saída. As regras criadas pela árvore estarão em adult.rules.
+O primeiro é o arquivo de entrada, e o segundo o de saída. As regras criadas pela árvore estarão no segundo.
