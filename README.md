@@ -11,6 +11,10 @@ EP de Inteligência Artificial - implementação de algoritmo ID3 com árvore de
       
 3 - Para rodar, use o comando 
 
-      java Main /dados/adult.final.csv /dados/adult.rules.txt
+      java Main /dados/adult.final.txt /dados/adult.rules.txt
+      
+ou
+      
+      java Main /dados/playtennis.txt /dados/playtennis.rules.txt
       
 O primeiro é o arquivo de entrada, e o segundo o de saída. As regras criadas pela árvore estarão em adult.rules.
