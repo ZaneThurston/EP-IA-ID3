@@ -37,33 +37,42 @@ public class Apoda {
 
 	public void podaArvore(Node root, double accur) {
 		boolean classificaResult = false;
-		double countErros = 0, n = validation.size(), accurTemp = 0;
+		double countErros = 0, accurTemp = 0;
+		int n = validation.size();
+
 
 		while (accurTemp < accur) {
+			// processo basico do algoritmo:
+			// seleciona no para remocao (busca em profundidade por no folha), marca nos visitados
+			// remove no, testa com conjunto de validacao
+			// se acurTemp diminuiu, recoloca no
+			// senao, mantem no removido
+			// repeat
+
+
 			for (int j = 0; j < validation.size(); j++) {
-
-
-
 				Node rootIt = root;
-				Aresta aresta = new Aresta();
+				Aresta arestaIt = new Aresta();
+				while (rootIt != null) {
+					arestaIt = rootIt.getAresta(validation.get(j).getDado(rootIt.getAtributoTeste(), Main.atributos));
+					if (arestaIt != null) {
+						if (arestaIt.getChild() == null) break;
 
-				while (rootIt != null && aresta != null) {
-					aresta = rootIt.getAresta(validation.get(j).getDado(rootIt.getAtributoTeste(), Main.atributos));
-
-					if (aresta.getChild() == null) {
-						classificaResult = false;
-						break;
-					}
-
-					rootIt = aresta.getChild();
+						rootIt = arestaIt.getChild();
+					} else break;
 				}
 
-				classificaResult = aresta.getClasseMajor().equals(validation.get(j).getClasse());
+				if (arestaIt != null) classificaResult = arestaIt.getClasseMajor().equals(validation.get(j).getClasse());
 
 				if (!classificaResult) countErros++;
 			}
+
+			if (1 - (countErros / n) < accurTemp) break;
 			accurTemp = 1 - (countErros / n);
+
+
 		}
+
 	}
 
 

@@ -149,10 +149,24 @@ public class Main {
         System.out.println("O erro verdadeiro do classificador esta entre "+minErr+" e "+maxErr);
 
 		ID3 id3 = new ID3();
-		root = id3.generateTree(registros, atributos);
+		//root = id3.generateTree(registros, atributos);
 
 		//Imprime a arvore resultante no arquivo Result.txt
 //		PrintWriter writer = null;
+
+
+        double accur = 0.0;
+        // Cria classe para execucao da poda
+        Apoda P = new Apoda();
+        root = P.criaArvore(id3);
+        accur = P.testArvore(root);
+
+        System.out.println("Acuracia da arvore sem a poda: "+accur);
+
+        P.podaArvore(root, accur);
+        accur = P.testArvore(root);
+
+        System.out.println("Acuracia da arvore apos a poda: "+accur);
 
 		IOManager.writeArvore(args[1], root);
 
