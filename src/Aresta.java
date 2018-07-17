@@ -6,13 +6,18 @@ public class Aresta {
 	private String valor;
 	private ArrayList<Registro> registros;
 	private Node child;
+	private boolean visitado;
 
-	public Aresta() {}
+	public Aresta() {
+		visitado = false;
+		valor = "";
+	}
 
 	public Aresta(String valor, ArrayList<Registro> registros, Node child) {
 		this.valor = valor;
 		this.registros = registros;
 		this.child = child;
+		visitado = false;
 	}
 
 	public Node getChild() { return child; }
@@ -44,4 +49,7 @@ public class Aresta {
 		return majorClass;
 	}
 
+	public boolean isVisitado() { return visitado; }
+
+	public void setVisitado(boolean visitado) {	this.visitado = visitado; }
 }

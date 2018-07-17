@@ -1,15 +1,18 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Node {
 
 	// no eh interno (decisao)
 	private String atributo;
-	private HashMap<String, Aresta> arestas = new HashMap<String, Aresta>();
+	private HashMap<String, Aresta> arestas;
 
-	public Node(){}
+	private boolean visitado;
+
+	public Node(){
+		atributo = "";
+		visitado = false;
+		arestas = new HashMap<String, Aresta>();
+	}
 
 	public String getAtributoTeste() { return atributo; }
 
@@ -23,5 +26,23 @@ public class Node {
 	}
 
 	public Aresta getAresta(String valor) { return arestas.get(valor); }
+
+	// Itera sobre o conjunto de arestas para retornar o primeiro filho nao visitado
+	public Aresta getNonVisitedAresta() {
+		String valor = "";
+		// falta resolver o q exatamente usar para iterar sobre o hashmap
+		Iterator arestaIterator = arestas.entrySet().iterator();
+		while (arestaIterator.hasNext()) {
+			HashMap.Entry a = arestaIterator.next();
+			if ()
+		}
+
+
+		return arestas.get(valor);
+	}
 	public HashMap<String, Aresta> getSetArestas() { return arestas; }
+
+	public boolean isVisitado() {return visitado;}
+
+	public void setVisitado(boolean visitado) {this.visitado = visitado;}
 }

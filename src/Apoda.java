@@ -49,6 +49,25 @@ public class Apoda {
 			// senao, mantem no removido
 			// repeat
 
+			// busca em profundidade por no folha nao visitado:
+			Node rootIt1 = root;
+			Aresta arestaIt1;
+			while (rootIt1 != null) {
+				// indefinido ainda como percorrer as arestas, talvez marca-las tambem?
+				for (int i = 0; i<rootIt1.getSetArestas().size(); i++) {
+					arestaIt1 = rootIt1.getAresta(validation.get(j).getDado(rootIt1.getAtributoTeste(), Main.atributos));
+					arestaIt1 = rootIt1.getNonVisitedAresta();
+
+				}
+				if (arestaIt1 != null) {
+					if (arestaIt1.getChild() == null) break;
+
+					rootIt1 = arestaIt1.getChild();
+				} else break;
+			}
+
+
+
 
 			for (int j = 0; j < validation.size(); j++) {
 				Node rootIt = root;
