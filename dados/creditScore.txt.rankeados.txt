@@ -1,0 +1,8 @@
+168,IF income IS over $35K AND credit_history IS unknown THEN low
+84,IF income IS over $35K AND credit_history IS bad THEN moderate
+252,IF income IS over $35K AND credit_history IS good THEN low
+84,IF income IS $15K to $35K AND credit_history IS bad THEN high
+336,IF income IS $0 to $15K THEN high
+84,IF income IS $15K to $35K AND credit_history IS good THEN moderate
+84,IF income IS $15K to $35K AND credit_history IS unknown AND debt IS low THEN moderate
+84,IF income IS $15K to $35K AND credit_history IS unknown AND debt IS high THEN high

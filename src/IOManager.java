@@ -19,13 +19,16 @@ public class IOManager {
 
 
 	// todo: WIP CONSTRUCAO DA SAIDA
-	public static void writeArvore(String path, Node raiz) {
+	public static void writeArvore(String path, Node raiz, int option) {
 		try {
-			PrintWriter wr = new PrintWriter(path, "UTF-8");
 			
 			String rule = "IF " + raiz.getAtributoTeste(); 
-			printPathsRecur(raiz, rule, wr);
-			wr.close();
+			if(option == 1) {
+				PrintWriter wr = new PrintWriter(path, "UTF-8");
+				writePathsRecur(raiz, rule, wr);
+				wr.close();
+			}
+			else printPathsRecur(raiz, rule);
 			
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
@@ -55,7 +58,28 @@ public class IOManager {
 		}
 	}
 	
-    static void printPathsRecur(Node raiz, String rule, PrintWriter wr) {
+    static void writePathsRecur(Node raiz, String rule, PrintWriter wr) {
+    	
+    	Iterator<String> raizIT = raiz.getSetArestas().keySet().iterator();
+    	String valorAtrib;
+    	String newRule;
+    	while(raizIT.hasNext()) {
+    		valorAtrib = raizIT.next();
+    		newRule = rule + " IS " + valorAtrib;
+    		if(raiz.getAresta(valorAtrib).getChild() == null) {
+				newRule = newRule + " THEN " + raiz.getAresta(valorAtrib).getClasseMajor();
+				// System.out.println(newRule);
+    			wr.write(newRule);
+    			wr.println();
+    			//System.out.println(newRule);
+    		} else {
+    			newRule = newRule + " AND " + raiz.getAresta(valorAtrib).getChild().getAtributoTeste();
+    			writePathsRecur(raiz.getAresta(valorAtrib).getChild(), newRule, wr);
+    		}
+    	}
+    }
+    
+    static void printPathsRecur(Node raiz, String rule) {
     	
     	Iterator<String> raizIT = raiz.getSetArestas().keySet().iterator();
     	String valorAtrib;
@@ -65,12 +89,13 @@ public class IOManager {
     		newRule = rule + " IS " + valorAtrib;
     		if(raiz.getAresta(valorAtrib).getChild() == null) {
     			newRule = newRule + " THEN " + raiz.getAresta(valorAtrib).getClasseMajor();
-    			wr.write(newRule);
-    			wr.println();
+    			System.out.println(newRule);
+//    			wr.write(newRule);
+//    			wr.println();
     			//System.out.println(newRule);
     		} else {
     			newRule = newRule + " AND " + raiz.getAresta(valorAtrib).getChild().getAtributoTeste();
-    			printPathsRecur(raiz.getAresta(valorAtrib).getChild(), newRule, wr);
+    			printPathsRecur(raiz.getAresta(valorAtrib).getChild(), newRule);
     		}
     	}
     }

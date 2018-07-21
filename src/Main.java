@@ -1,6 +1,11 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Random;
+import java.util.Stack;
 
 public class Main {
 
@@ -15,7 +20,6 @@ public class Main {
 	static int numArestas = 0;
 
 	private static final double CONFIDENCE_INTERVAL_CONSTANT = 1.96;
-
 
     // Dado um exemplo e a raiz do classificador, valida o exemplo no classificador
     public static boolean classifica(Node root, Registro exemplo) {
@@ -35,6 +39,54 @@ public class Main {
         return aresta.getClasseMajor().equals(exemplo.getClasse());
     }
 
+    // Dado um exemplo e a raiz do classificador, valida o exemplo no classificador
+    public static void classificaRegras(String path, Node root, ArrayList<Registro> exemplos) throws FileNotFoundException, UnsupportedEncodingException {
+    	
+    	Node rootIt = root;
+    	Aresta aresta = new Aresta();
+    	String rule = "IF ";
+    	HashMap<String, Integer> contaRegras = new HashMap<String, Integer>();
+		String regra = "";
+		int countMaior = 0, count, contador = 0;
+		
+    	for(Registro exemplo:exemplos) {
+    		System.out.println(contador++);
+    		outerloop:
+	    	while (rootIt != null) {
+	    		aresta = rootIt.getAresta(exemplo.getDado(rootIt.getAtributoTeste(), atributos));
+	    		if(aresta == null) break outerloop;
+	    		rule = rule + rootIt.getAtributoTeste() + " IS " + aresta.getValor();
+	    		if (aresta.getChild() == null) break;
+	    		else {
+	    			rootIt = aresta.getChild();
+	    			rule = rule + " AND ";
+	    		}
+	    	}
+    		if(aresta != null) {
+    			rule = rule + " THEN " + aresta.getClasseMajor();
+    			if (!contaRegras.containsKey(rule)) contaRegras.put(rule, 0);
+    			contaRegras.put(rule, contaRegras.get(rule) + 1);
+    			rule = "IF ";
+    			rootIt = root;
+    		}
+    	}
+    	System.out.println("WAT");
+    	
+    	path = path + ".rankeados.txt";
+    
+		PrintWriter wr = new PrintWriter(path, "UTF-8");
+
+    	Iterator<String> regrasIt = contaRegras.keySet().iterator();
+		
+    	while (regrasIt.hasNext()) {
+			rule = regrasIt.next();
+			count = contaRegras.get(rule);
+			System.out.println(count + " " + rule);
+			wr.write(count + "," + rule);
+			wr.println();
+		}
+    	wr.close();
+    }
 
     // Dado um int K, separa o conjunto de exemplos em K subconjuntos, sendo 1 de teste e k-1 de treino
     public static void kFold(int k, boolean permuta) {
@@ -82,8 +134,6 @@ public class Main {
         ArrayList<Registro> trainExamples = new ArrayList<>();
         ID3 id3;
 
-
-
         for (int i = 0; i < k; i++) {
             numNodes = 0;
             numArestas = 0;
@@ -110,9 +160,9 @@ public class Main {
                 testRegs = newTestExamples;
             }
             calculatedError += errors[i];
-            System.out.println("Arvore "+i+" acabou com: " + numNodes+ " nos.");
-            System.out.println("Arvore "+i+" acabou com: " + numArestas+ " arestas.");
-            System.out.println("Erro da arvore: "+errors[i]);
+             System.out.println("Arvore "+i+" acabou com: " + numNodes+ " nos.");
+             System.out.println("Arvore "+i+" acabou com: " + numArestas+ " arestas.");
+            System.out.println("Erro da arvore "+ (i) +": "+errors[i]);
         }
 
         calculatedError = calculatedError / k;
@@ -124,8 +174,10 @@ public class Main {
 		 * FunÃ§Ã£o main, ela que irÃ¡ carregar os dados e iniciar o processamento da Ã¡rvore.
 		 *
 		 * @param args
+		 * @throws UnsupportedEncodingException 
+		 * @throws FileNotFoundException 
 		 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
     	//Caminho para a pasta onde serÃ¡ lido o arquivo com a base de dados
 		if (args.length < 2) {
 			System.out.println(" Informe caminho dos arquivos de entrada e saída! ");
@@ -149,28 +201,28 @@ public class Main {
         System.out.println("O erro verdadeiro do classificador esta entre "+minErr+" e "+maxErr);
 
 		ID3 id3 = new ID3();
-		//root = id3.generateTree(registros, atributos);
-
-		//Imprime a arvore resultante no arquivo Result.txt
-//		PrintWriter writer = null;
-
+        root = id3.generateTree(registros, atributos);
 
         double accur = 0.0;
-        // Cria classe para execucao da poda
+        
+        //Cria classe para execucao da poda
         Apoda P = new Apoda();
+        
+        //Cria a árvore com o conjunto de teste definido na criação do objeto 
         root = P.criaArvore(id3);
+        
+        //Calcula a acurácia inicial da árvore criada 
         accur = P.testArvore(root);
-
         System.out.println("Acuracia da arvore sem a poda: "+accur);
-
+        
+        //Faz a pós-poda e calcula a nova acurácia
         P.podaArvore(root, accur);
         accur = P.testArvore(root);
-
-        System.out.println("Acuracia da arvore apos a poda: "+accur);
-
-		IOManager.writeArvore(args[1], root);
-
-		//Fecha o arquivo
-//		writer.close();
+        System.out.println("\nAcuracia da arvore apos a poda: "+accur);
+        
+		IOManager.writeArvore(args[1], root, 1);
+	
+//		kFold(3,false);
+		classificaRegras(args[0], root, registros);
 	}
 }

@@ -1,0 +1,1177 @@
+collateral;income;debt;credit_history;risk
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high
+none;$0 to $15K;high;bad;high
+none;$15K to $35K;high;unknown;high
+none;$15K to $35K;low;unknown;moderate
+none;$0 to $15K;low;unknown;high
+none;over $35K;low;unknown;low
+adequate;over $35K;low;unknown;low
+none;$0 to $15K;low;bad;high
+adequate;over $35K;low;bad;moderate
+none;over $35K;low;good;low
+adequate;over $35K;high;good;low
+none;$0 to $15K;high;good;high
+none;$15K to $35K;high;good;moderate
+none;over $35K;high;good;low
+none;$15K to $35K;high;bad;high

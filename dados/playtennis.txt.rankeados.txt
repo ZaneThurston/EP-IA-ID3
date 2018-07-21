@@ -1,0 +1,5 @@
+315,IF clima IS sol AND umidade IS alta THEN não
+210,IF clima IS chuva AND vento IS forte THEN não
+315,IF clima IS chuva AND vento IS fraco THEN sim
+420,IF clima IS nublado THEN sim
+210,IF clima IS sol AND umidade IS normal THEN sim

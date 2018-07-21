@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 
 public class Apoda {
 
@@ -9,6 +12,7 @@ public class Apoda {
 	ArrayList<Registro> training;
 
     public Apoda() {
+    	//Divide os três conjuntos: teste, validação e treinamento
 		Main.kFold(3, true);
 		test = new ArrayList<>();
 		validation = new ArrayList<>();
@@ -20,11 +24,13 @@ public class Apoda {
 
     }
     
+    //Método que cria a árvore com o conjunto de treinamento atribuído na construção do objeto
     public Node criaArvore(ID3 id3) {
 		Node root = id3.generateTree(training, Main.atributos);
 		return root;
 	}
 
+    //Método para testar os exemplos do conjunto de teste na nova árvore
 	public double testArvore(Node root) {
     	boolean classificaResult = false;
     	double countErros = 0, n = test.size();
@@ -35,64 +41,107 @@ public class Apoda {
 		return 1 - (countErros / n);
 	}
 
-	public void podaArvore(Node root, double accur) {
+	//Método para testar os exemplos do conjunto de teste na nova árvore
+	public double validaArvore(Node root) {
 		boolean classificaResult = false;
-		double countErros = 0, accurTemp = 0;
-		int n = validation.size();
-
-
-		while (accurTemp < accur) {
-			// processo basico do algoritmo:
-			// seleciona no para remocao (busca em profundidade por no folha), marca nos visitados
-			// remove no, testa com conjunto de validacao
-			// se acurTemp diminuiu, recoloca no
-			// senao, mantem no removido
-			// repeat
-
-			// busca em profundidade por no folha nao visitado:
-			Node rootIt1 = root;
-			Aresta arestaIt1;
-			while (rootIt1 != null) {
-				// indefinido ainda como percorrer as arestas, talvez marca-las tambem?
-				for (int i = 0; i<rootIt1.getSetArestas().size(); i++) {
-					arestaIt1 = rootIt1.getAresta(validation.get(j).getDado(rootIt1.getAtributoTeste(), Main.atributos));
-					arestaIt1 = rootIt1.getNonVisitedAresta();
-
-				}
-				if (arestaIt1 != null) {
-					if (arestaIt1.getChild() == null) break;
-
-					rootIt1 = arestaIt1.getChild();
-				} else break;
-			}
-
-
-
-
-			for (int j = 0; j < validation.size(); j++) {
-				Node rootIt = root;
-				Aresta arestaIt = new Aresta();
-				while (rootIt != null) {
-					arestaIt = rootIt.getAresta(validation.get(j).getDado(rootIt.getAtributoTeste(), Main.atributos));
-					if (arestaIt != null) {
-						if (arestaIt.getChild() == null) break;
-
-						rootIt = arestaIt.getChild();
-					} else break;
-				}
-
-				if (arestaIt != null) classificaResult = arestaIt.getClasseMajor().equals(validation.get(j).getClasse());
-
-				if (!classificaResult) countErros++;
-			}
-
-			if (1 - (countErros / n) < accurTemp) break;
-			accurTemp = 1 - (countErros / n);
-
-
+		double countErros = 0, n = validation.size();
+		for (int j = 0; j < validation.size(); j++) {
+			classificaResult = Main.classifica(root, validation.get(j));
+			if (!classificaResult) countErros++;
 		}
-
+		return 1 - (countErros / n);
 	}
 
+	//Método para a poda da árvore
+	public void podaArvore(Node root, double accur) {
+		//Primeiro, rodamos uma busca em largura na árvore já montada para coletarmos os nós.
+		//Os nós são colocados em uma pilha, que será usada para a poda em si
+		
+		Queue<Node> queue = new LinkedList<Node>();
+		queue.add(root);
+		Stack<Node> rayovac = new Stack<Node>();
+		Stack<Node> duracell = new Stack<Node>();
+		int arestas = 0;
+		int nos = 1;
+		while(!queue.isEmpty()) {
+			rayovac.push(queue.peek());
+			duracell.push(queue.peek());
+			Node node = queue.remove();
+			Node child=null;
+			Aresta a = null;
+			for(String s:node.getSetArestas().keySet()) {
+				
+				arestas++;
+				a = node.getAresta(s);
+				if(a.getChild() == null) {
+					continue;
+				}
+				
+				child = a.getChild();
+				nos++;
+				queue.add(child);
+			}
+		}
+		System.out.println("\nARESTAS "+arestas+ " NOS " + nos);
+		System.out.println("Árvore lida. Começando poda...");
+		
+		//No fim desse processo, a pilha vai ter todos os nós em ordem das folhas para a raiz
+		//O próximo passo é pegar esses nós, na ordem, e:
+		//1 - Tirar nó da árvore
+		//2 - Passar árvore pelo teste
+		//3 - Checar se a acurácia aumenta
+		//4 - Deixar o nó, caso não aumente. Tirar caso aumente.
 
+		int counter = 0;
+		while(!rayovac.empty()) {
+			
+			counter++;
+			System.out.print(".");
+			if(counter % 100 == 0) System.out.println();
+			
+			//Pega o último nó folha (de baixo pra cima, da direita pra esquerda
+			Node excluded = rayovac.pop();
+			//Pega o pai desse nó folha, para consertar a exclusão
+			Node pai = excluded.getDad();
+			
+			if(pai == null) break;
+			
+			//Aresta auxiliar que vai ser a aresta que o pai vai usar para esse filho
+			Aresta theTraitor = (Aresta) excluded.getSetArestas().values().toArray()[0];
+			Aresta backup = new Aresta();
+			
+			//Encontra, dentre as arestas, qual a mais relevante (pelo número de registros em cada um)
+			//(por ser nó folha, assume-se que todos os registros no nó são da mesma classe)
+			for(Aresta s: excluded.getSetArestas().values()) {
+				if(theTraitor.getRegistros().size() < s.getRegistros().size()) {
+					theTraitor = s;
+				}
+			}
+			
+			//Seta os registros da aresta mais importante 
+			pai.getAresta(excluded.getValor_dad()).setRegistros(theTraitor.getRegistros());
+			pai.getAresta(excluded.getValor_dad()).setChild(null);
+			pai.getAresta(excluded.getValor_dad()).setOtosan(pai);
+			
+			//Neste ponto, o nó foi podado. Resta ver se a acurácia mudou.
+			double newAccur = validaArvore(root);
+			
+			if(newAccur > accur) {
+				accur = newAccur;
+			}
+			else {
+				pai.getAresta(excluded.getValor_dad()).setChild(excluded);
+			}
+		}
+		
+		//Impressão dos nós, arestas aos quais estão ligadas 
+//		int i = 0;
+//		int size = duracell.size();
+//		System.out.println("\nNós da árvore: ");
+//		for(i = 0; i < size; i++) {
+//			Node aux = duracell.pop();
+//			String pai = ((aux.getDad()) != null ? aux.getDad().getAtributoTeste() : "NINGUÉM");
+//			System.out.println("Nó: " + aux.getAtributoTeste() + ", FILHO DE: " + pai + ", LIGADO POR: " + aux.getValor_dad());
+//		}
+	}
 }

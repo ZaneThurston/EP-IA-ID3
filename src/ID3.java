@@ -64,10 +64,10 @@ public class ID3 {
         		while (subconjRootIT.hasNext()) {
         			valorAtrib = subconjRootIT.next();
         			subconjRegs = subconjRoot.get(valorAtrib);
-        			root.criaAresta(valorAtrib, subconjRegs, null);
-        			Main.numArestas++;
+					root.criaAresta(valorAtrib, subconjRegs, null, root);
+//        			Main.numArestas++;
         		}
-        		Main.numNodes++;
+//        		Main.numNodes++;
         	}
         	return root;
         	
@@ -87,10 +87,10 @@ public class ID3 {
         	while (subconjRootIT.hasNext()) {
         		valorAtrib = subconjRootIT.next();
         		subconjRegs = subconjRoot.get(valorAtrib);
-        		root.criaAresta(valorAtrib, subconjRegs, generateTree(subconjRegs, atribsRestantes));
-        		Main.numArestas++;
+        		root.criaAresta(valorAtrib, subconjRegs, generateTree(subconjRegs, atribsRestantes), root);
+//        		Main.numArestas++;
         	}
-        	Main.numNodes++;
+//        	Main.numNodes++;
         	return root;
         }
 	}
