@@ -22,18 +22,20 @@ public class Main {
 	private static final double CONFIDENCE_INTERVAL_CONSTANT = 1.96;
 
     // Dado um exemplo e a raiz do classificador, valida o exemplo no classificador
-    public static boolean classifica(Node root, Registro exemplo) {
+    public static boolean classifica(Node root, Registro exemplo, int limit) {
 
         Node rootIt = root;
         Aresta aresta = new Aresta();
+        int aux = 0;
 
-        while (rootIt != null) {
+        while (rootIt != null && aux < limit) {
             aresta = rootIt.getAresta(exemplo.getDado(rootIt.getAtributoTeste(), atributos));
 
             if (aresta == null) return false;
             if (aresta.getChild() == null) break;
 
             rootIt = aresta.getChild();
+            aux++;
         }
 
         return aresta.getClasseMajor().equals(exemplo.getClasse());
@@ -145,7 +147,7 @@ public class Main {
             id3 = new ID3();
             root = id3.generateTree(trainExamples, atributos);
             for (int j = 0; j < testRegs.size(); j++) {
-                classificaResult = classifica(root, testRegs.get(j));
+                classificaResult = classifica(root, testRegs.get(j), Integer.MAX_VALUE);
                 if (!classificaResult) countErros++;
             }
             nExemplos = testRegs.size();
@@ -221,8 +223,9 @@ public class Main {
         System.out.println("\nAcuracia da arvore apos a poda: "+accur);
         
 		IOManager.writeArvore(args[1], root, 1);
+//		P.podaArvore(root, accur);
 	
 //		kFold(3,false);
-		classificaRegras(args[0], root, registros);
+//		classificaRegras(args[0], root, registros);
 	}
 }

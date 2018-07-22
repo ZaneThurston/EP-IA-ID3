@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -31,22 +34,56 @@ public class Apoda {
 	}
 
     //Método para testar os exemplos do conjunto de teste na nova árvore
+    public double treinamentoArvore(Node root, int sizeTree) {
+    	boolean classificaResult = false;
+    	double countErros = 0, n = training.size();
+		System.out.println("MEDIDAS COM TREINAMENTO");
+    	for(int i = 1; i <= 50; i++) {
+	    	for (int j = 0; j < training.size(); j++) {
+	    		classificaResult = Main.classifica(root, training.get(j), i);
+	    		if (!classificaResult) countErros++;
+	    	}
+	    	double aux = 1 - (countErros / n);
+	    	System.out.println(i + " " + aux);
+	    	countErros = 0;
+    	}
+    	return 1 - (countErros / n);
+    }
+
+    //Método para testar os exemplos do conjunto de teste na nova árvore
 	public double testArvore(Node root) {
     	boolean classificaResult = false;
     	double countErros = 0, n = test.size();
 		for (int j = 0; j < test.size(); j++) {
-			classificaResult = Main.classifica(root, test.get(j));
+			classificaResult = Main.classifica(root, test.get(j), Integer.MAX_VALUE);
 			if (!classificaResult) countErros++;
 		}
 		return 1 - (countErros / n);
 	}
 
 	//Método para testar os exemplos do conjunto de teste na nova árvore
+    public double testArvoreItera(Node root, int sizeTree) {
+    	boolean classificaResult = false;
+    	double countErros = 0, n = test.size();
+		System.out.println("MEDIDAS COM TESTE");
+    	for(int i = 1; i <= 100; i++) {
+	    	for (int j = 0; j < test.size(); j++) {
+	    		classificaResult = Main.classifica(root, test.get(j), i);
+	    		if (!classificaResult) countErros++;
+	    	}
+	    	double aux = 1 - (countErros / n);
+	    	System.out.println(i + " " + aux);
+	    	countErros = 0;
+    	}
+    	return 1 - (countErros / n);
+    }
+
+	//Método para testar os exemplos do conjunto de teste na nova árvore
 	public double validaArvore(Node root) {
 		boolean classificaResult = false;
 		double countErros = 0, n = validation.size();
 		for (int j = 0; j < validation.size(); j++) {
-			classificaResult = Main.classifica(root, validation.get(j));
+			classificaResult = Main.classifica(root, validation.get(j), Integer.MAX_VALUE);
 			if (!classificaResult) countErros++;
 		}
 		return 1 - (countErros / n);
@@ -83,7 +120,11 @@ public class Apoda {
 			}
 		}
 		System.out.println("\nARESTAS "+arestas+ " NOS " + nos);
+		int tamanhoArvore = rayovac.size();
+		treinamentoArvore(root, tamanhoArvore);
+		testArvoreItera(root, tamanhoArvore);
 		System.out.println("Árvore lida. Começando poda...");
+		System.out.println("MEDIDAS COM TESTE NA PODA");
 		
 		//No fim desse processo, a pilha vai ter todos os nós em ordem das folhas para a raiz
 		//O próximo passo é pegar esses nós, na ordem, e:
@@ -96,8 +137,8 @@ public class Apoda {
 		while(!rayovac.empty()) {
 			
 			counter++;
-			System.out.print(".");
-			if(counter % 100 == 0) System.out.println();
+//			System.out.print(".");
+//			if(counter % 100 == 0) System.out.println();
 			
 			//Pega o último nó folha (de baixo pra cima, da direita pra esquerda
 			Node excluded = rayovac.pop();
@@ -132,6 +173,7 @@ public class Apoda {
 			else {
 				pai.getAresta(excluded.getValor_dad()).setChild(excluded);
 			}
+			System.out.println(counter + "," + accur);
 		}
 		
 		//Impressão dos nós, arestas aos quais estão ligadas 
